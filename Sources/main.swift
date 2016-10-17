@@ -6,23 +6,26 @@ guard let url = URL(string: "Files/MyNewView.xib") else {
     exit(1)
 }
 
-// Read XML document
-let rootXibDocument = try XmlDomReader.read(atPath: url)
-
-// Check root document
-let rootElement = try rootXibDocument.rootElement()
-guard (rootElement.name == "document") else {
-    exit(2)
-}
-
-// Set Xib definition
-if let xibDefinition = XibDefinition(element: rootElement) {
+do {
+    // Read XML document
+    let rootXibDocument = try XmlDomReader.read(atPath: url)
     
-    // Display object
-    for object in xibDefinition.objects {
-        print("Object")
+    // Check root document
+    let rootElement = try rootXibDocument.rootElement()
+    guard (rootElement.name == "document") else {
+        exit(2)
     }
+    
+    // Set Xib definition
+    if let xibDefinition = XibDefinition(element: rootElement) {
+        
+        // Generate files
+        try xibDefinition.generate(at: URL(fileURLWithPath: "/tmp/coconut/Sources"))
+        
+    }
+} catch {
+    print("\(error)")
 }
 
 
-print("Hello, world!")
+
