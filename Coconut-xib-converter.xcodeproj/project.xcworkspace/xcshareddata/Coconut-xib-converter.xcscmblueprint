@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2002FAF6E0C4BBFA8542C219E984B5BD14FE9FDC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E28CA4A3DCCFF65055D9A6C6936D310E8A414183" : 9223372036854775807,
+    "2002FAF6E0C4BBFA8542C219E984B5BD14FE9FDC" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "05B3DCBC-8E3D-49C4-A137-28892EFA30F3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E28CA4A3DCCFF65055D9A6C6936D310E8A414183" : "Coconut-xib-converter\/Packages\/LibXml2Swift-1.0.0\/",
+    "2002FAF6E0C4BBFA8542C219E984B5BD14FE9FDC" : "Coconut-xib-converter\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Coconut-xib-converter",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Coconut-xib-converter.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/damicreabox\/Coconut-xib-converter.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2002FAF6E0C4BBFA8542C219E984B5BD14FE9FDC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/damicreabox\/LibXml2Swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E28CA4A3DCCFF65055D9A6C6936D310E8A414183"
+    }
+  ]
+}
