@@ -20,10 +20,19 @@ func unknownNode(node: XmlDomNode) {
 public class XibDefinition {
 
     public let name: String = "MyUI"
-
+    public let objects: Dictionary<String,XibCustomObject>
+    public let windows: Dictionary<String,XibObject>
+    public let views: Dictionary<String,XibObject>
+    public let menu: XibObject?
     
-    public init() {
-        
+    public init(objects: Dictionary<String,XibCustomObject>,
+                windows: Dictionary<String,XibObject>,
+                views: Dictionary<String,XibObject>,
+                menu: XibObject?) {
+        self.objects = objects
+        self.windows = windows
+        self.views = views
+        self.menu = menu
     }
     
 }

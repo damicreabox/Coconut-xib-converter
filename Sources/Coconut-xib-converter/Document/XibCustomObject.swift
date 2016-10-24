@@ -9,5 +9,11 @@
 import Foundation
 
 public class XibCustomObject : XibObject {
-    
+    public let name: String
+    public let customClass: String
+    init(id: String?, name: String?, customClass: String?) {
+        self.name = name == nil ? "name" : name!
+        self.customClass = customClass == nil ? "NSObject" : customClass!
+        super.init(id: id)
+    }
 }

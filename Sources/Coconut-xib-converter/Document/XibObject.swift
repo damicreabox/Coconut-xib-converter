@@ -9,5 +9,8 @@
 import Foundation
 
 public class XibObject {
-    
+    public let id: String
+    init(id: String?) {
+        self.id = id == nil ? "" : id!
+    }
 }

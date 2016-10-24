@@ -9,7 +9,7 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "05B3DCBC-8E3D-49C4-A137-28892EFA30F3",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "E28CA4A3DCCFF65055D9A6C6936D310E8A414183" : "Coconut-xib-converter\/Packages\/LibXml2Swift-1.0.0\/",
+    "E28CA4A3DCCFF65055D9A6C6936D310E8A414183" : "Coconut-xib-converter\/Packages\/LibXml2Swift-1.1.0\/",
     "2002FAF6E0C4BBFA8542C219E984B5BD14FE9FDC" : "Coconut-xib-converter\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Coconut-xib-converter",

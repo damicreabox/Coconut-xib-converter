@@ -21,6 +21,10 @@ public class UIDefinitionWriter {
         stream.write(encodedDataArray, maxLength: encodedDataArray.count)
     }
     
+    private func rewriteObjectDefinition(object: XibCustomObject, to stream: OutputStream) {
+        UIDefinitionWriter.write(line: "   private let \(object.name): \(object.customClass) = \"\"\n", to: stream)
+    }
+    
     public func write(at url: URL) throws {
         
         // FIXME Test directory
@@ -42,6 +46,11 @@ public class UIDefinitionWriter {
         UIDefinitionWriter.write(line: "public class \(uiFile) : UIDefinitionDelegate {\n", to: stream)
         UIDefinitionWriter.write(line: "   private let application: Application\n", to: stream)
         UIDefinitionWriter.write(line: "   private let firstResponder: Responder\n", to: stream)
+        
+        for object in xibDefinition.objects {
+            rewriteObjectDefinition(object: object.value, to: stream)
+        }
+        
         UIDefinitionWriter.write(line: "   init() {\n", to: stream)
         UIDefinitionWriter.write(line: "         self.application = Application.shared()\n", to: stream)
         UIDefinitionWriter.write(line: "         self.firstResponder = application\n", to: stream)

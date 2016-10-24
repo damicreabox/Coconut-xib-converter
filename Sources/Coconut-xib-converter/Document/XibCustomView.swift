@@ -10,4 +10,10 @@ import Foundation
 
 public class XibCustomView : XibObject {
     
+    public let subViews: [XibObject]
+    
+    init(id: String?, subViews: [XibObject]) {
+        self.subViews = subViews
+        super.init(id: id)
+    }
 }
