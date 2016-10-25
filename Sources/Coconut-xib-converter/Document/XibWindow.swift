@@ -12,9 +12,13 @@ import Foundation
 public class XibWindow : XibObject {
     
     public let view: XibCustomView?
+    public let customClass : String
+    public let frame : NSRect
     
-    init(id: String?, view: XibCustomView?) {
+    init(id: String?, view: XibCustomView?, frame: NSRect, customClass: String?) {
         self.view = view
+        self.frame = frame
+        self.customClass = customClass == nil ? "Window" : customClass!
         super.init(id: id)
     }
 }

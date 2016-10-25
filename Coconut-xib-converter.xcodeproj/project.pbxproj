@@ -40,41 +40,41 @@
         _______Group_LibXml2Swift = {
             isa = PBXGroup;
             name = 'LibXml2Swift';
-            path = 'Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift';
+            path = 'Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift';
             sourceTree = '<group>';
-            children = ('__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomAttribute.swift', '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomDocument.swift', '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomElement.swift', '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomNode.swift', '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomReader.swift', '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomTextNode.swift');
+            children = ('__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomAttribute.swift', '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomDocument.swift', '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomElement.swift', '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomNode.swift', '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomReader.swift', '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomTextNode.swift');
         };
-        '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomAttribute.swift' = {
+        '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomAttribute.swift' = {
             isa = PBXFileReference;
             lastKnownFileType = sourcecode.swift;
             path = 'XmlDomAttribute.swift';
             sourceTree = '<group>';
         };
-        '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomDocument.swift' = {
+        '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomDocument.swift' = {
             isa = PBXFileReference;
             lastKnownFileType = sourcecode.swift;
             path = 'XmlDomDocument.swift';
             sourceTree = '<group>';
         };
-        '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomElement.swift' = {
+        '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomElement.swift' = {
             isa = PBXFileReference;
             lastKnownFileType = sourcecode.swift;
             path = 'XmlDomElement.swift';
             sourceTree = '<group>';
         };
-        '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomNode.swift' = {
+        '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomNode.swift' = {
             isa = PBXFileReference;
             lastKnownFileType = sourcecode.swift;
             path = 'XmlDomNode.swift';
             sourceTree = '<group>';
         };
-        '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomReader.swift' = {
+        '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomReader.swift' = {
             isa = PBXFileReference;
             lastKnownFileType = sourcecode.swift;
             path = 'XmlDomReader.swift';
             sourceTree = '<group>';
         };
-        '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomTextNode.swift' = {
+        '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomTextNode.swift' = {
             isa = PBXFileReference;
             lastKnownFileType = sourcecode.swift;
             path = 'XmlDomTextNode.swift';
@@ -99,32 +99,32 @@
         };
         CompilePhase_LibXml2Swift = {
             isa = PBXSourcesBuildPhase;
-            files = ('__src_cc_ref_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomAttribute.swift', '__src_cc_ref_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomDocument.swift', '__src_cc_ref_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomElement.swift', '__src_cc_ref_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomNode.swift', '__src_cc_ref_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomReader.swift', '__src_cc_ref_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomTextNode.swift');
+            files = ('__src_cc_ref_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomAttribute.swift', '__src_cc_ref_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomDocument.swift', '__src_cc_ref_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomElement.swift', '__src_cc_ref_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomNode.swift', '__src_cc_ref_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomReader.swift', '__src_cc_ref_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomTextNode.swift');
             runOnlyForDeploymentPostprocessing = 0;
         };
-        '__src_cc_ref_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomAttribute.swift' = {
+        '__src_cc_ref_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomAttribute.swift' = {
             isa = PBXBuildFile;
-            fileRef = '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomAttribute.swift';
+            fileRef = '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomAttribute.swift';
         };
-        '__src_cc_ref_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomDocument.swift' = {
+        '__src_cc_ref_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomDocument.swift' = {
             isa = PBXBuildFile;
-            fileRef = '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomDocument.swift';
+            fileRef = '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomDocument.swift';
         };
-        '__src_cc_ref_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomElement.swift' = {
+        '__src_cc_ref_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomElement.swift' = {
             isa = PBXBuildFile;
-            fileRef = '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomElement.swift';
+            fileRef = '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomElement.swift';
         };
-        '__src_cc_ref_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomNode.swift' = {
+        '__src_cc_ref_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomNode.swift' = {
             isa = PBXBuildFile;
-            fileRef = '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomNode.swift';
+            fileRef = '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomNode.swift';
         };
-        '__src_cc_ref_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomReader.swift' = {
+        '__src_cc_ref_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomReader.swift' = {
             isa = PBXBuildFile;
-            fileRef = '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomReader.swift';
+            fileRef = '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomReader.swift';
         };
-        '__src_cc_ref_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomTextNode.swift' = {
+        '__src_cc_ref_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomTextNode.swift' = {
             isa = PBXBuildFile;
-            fileRef = '__PBXFileRef_Packages/LibXml2Swift-1.2.0/Sources/LibXml2Swift/XmlDomTextNode.swift';
+            fileRef = '__PBXFileRef_Packages/LibXml2Swift-1.3.1/Sources/LibXml2Swift/XmlDomTextNode.swift';
         };
         ___LinkPhase_LibXml2Swift = {
             isa = PBXFrameworksBuildPhase;
@@ -156,7 +156,7 @@
             name = 'Coconut-xib-converter';
             path = 'Sources/Coconut-xib-converter';
             sourceTree = '<group>';
-            children = ('__PBXFileRef_Sources/Coconut-xib-converter/main.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Document/XibCustomObject.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Document/XibCustomView.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Document/XibDefinition.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Document/XibMenu.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Document/XibObject.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Document/XibWindow.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Reader/XibDefinitionReader.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Writer/UIDefinitionWriter.swift');
+            children = ('__PBXFileRef_Sources/Coconut-xib-converter/main.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Document/XibCustomObject.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Document/XibCustomView.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Document/XibDefinition.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Document/XibMenu.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Document/XibObject.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Document/XibWindow.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Generator/CustomObjectGenerator.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Generator/UIDefinitionWriter.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Generator/ViewGenerator.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Generator/WindowGenerator.swift', '__PBXFileRef_Sources/Coconut-xib-converter/Reader/XibDefinitionReader.swift');
         };
         '__PBXFileRef_Sources/Coconut-xib-converter/main.swift' = {
             isa = PBXFileReference;
@@ -200,16 +200,34 @@
             path = 'Document/XibWindow.swift';
             sourceTree = '<group>';
         };
+        '__PBXFileRef_Sources/Coconut-xib-converter/Generator/CustomObjectGenerator.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'Generator/CustomObjectGenerator.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/Coconut-xib-converter/Generator/UIDefinitionWriter.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'Generator/UIDefinitionWriter.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/Coconut-xib-converter/Generator/ViewGenerator.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'Generator/ViewGenerator.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/Coconut-xib-converter/Generator/WindowGenerator.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'Generator/WindowGenerator.swift';
+            sourceTree = '<group>';
+        };
         '__PBXFileRef_Sources/Coconut-xib-converter/Reader/XibDefinitionReader.swift' = {
             isa = PBXFileReference;
             lastKnownFileType = sourcecode.swift;
             path = 'Reader/XibDefinitionReader.swift';
-            sourceTree = '<group>';
-        };
-        '__PBXFileRef_Sources/Coconut-xib-converter/Writer/UIDefinitionWriter.swift' = {
-            isa = PBXFileReference;
-            lastKnownFileType = sourcecode.swift;
-            path = 'Writer/UIDefinitionWriter.swift';
             sourceTree = '<group>';
         };
         ______Target_Coconut_xib_converter = {
@@ -231,7 +249,7 @@
         };
         CompilePhase_Coconut_xib_converter = {
             isa = PBXSourcesBuildPhase;
-            files = ('__src_cc_ref_Sources/Coconut-xib-converter/main.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Document/XibCustomObject.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Document/XibCustomView.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Document/XibDefinition.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Document/XibMenu.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Document/XibObject.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Document/XibWindow.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Reader/XibDefinitionReader.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Writer/UIDefinitionWriter.swift');
+            files = ('__src_cc_ref_Sources/Coconut-xib-converter/main.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Document/XibCustomObject.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Document/XibCustomView.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Document/XibDefinition.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Document/XibMenu.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Document/XibObject.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Document/XibWindow.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Generator/CustomObjectGenerator.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Generator/UIDefinitionWriter.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Generator/ViewGenerator.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Generator/WindowGenerator.swift', '__src_cc_ref_Sources/Coconut-xib-converter/Reader/XibDefinitionReader.swift');
             runOnlyForDeploymentPostprocessing = 0;
         };
         '__src_cc_ref_Sources/Coconut-xib-converter/main.swift' = {
@@ -262,13 +280,25 @@
             isa = PBXBuildFile;
             fileRef = '__PBXFileRef_Sources/Coconut-xib-converter/Document/XibWindow.swift';
         };
+        '__src_cc_ref_Sources/Coconut-xib-converter/Generator/CustomObjectGenerator.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/Coconut-xib-converter/Generator/CustomObjectGenerator.swift';
+        };
+        '__src_cc_ref_Sources/Coconut-xib-converter/Generator/UIDefinitionWriter.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/Coconut-xib-converter/Generator/UIDefinitionWriter.swift';
+        };
+        '__src_cc_ref_Sources/Coconut-xib-converter/Generator/ViewGenerator.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/Coconut-xib-converter/Generator/ViewGenerator.swift';
+        };
+        '__src_cc_ref_Sources/Coconut-xib-converter/Generator/WindowGenerator.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/Coconut-xib-converter/Generator/WindowGenerator.swift';
+        };
         '__src_cc_ref_Sources/Coconut-xib-converter/Reader/XibDefinitionReader.swift' = {
             isa = PBXBuildFile;
             fileRef = '__PBXFileRef_Sources/Coconut-xib-converter/Reader/XibDefinitionReader.swift';
-        };
-        '__src_cc_ref_Sources/Coconut-xib-converter/Writer/UIDefinitionWriter.swift' = {
-            isa = PBXBuildFile;
-            fileRef = '__PBXFileRef_Sources/Coconut-xib-converter/Writer/UIDefinitionWriter.swift';
         };
         ___LinkPhase_Coconut_xib_converter = {
             isa = PBXFrameworksBuildPhase;

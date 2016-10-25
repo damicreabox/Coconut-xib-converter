@@ -17,15 +17,19 @@ public enum XibReaderError : Error {
 
 public class XibDefinitionReader {
     
+    private func readFrame(node: XmlDomNode?) -> NSRect {
+        return NSRect()
+    }
+    
     private func readElements(element: XmlDomElement) -> (
         objects: Dictionary<String,XibCustomObject>,
-        windows: Dictionary<String,XibObject>,
-        views: Dictionary<String,XibObject>,
+        windows: Dictionary<String,XibWindow>,
+        views: Dictionary<String,XibCustomView>,
         menu: XibObject?) {
             
             var objects = Dictionary<String,XibCustomObject>()
-            var windows = Dictionary<String,XibObject>()
-            var views = Dictionary<String,XibObject>()
+            var windows = Dictionary<String,XibWindow>()
+            var views = Dictionary<String,XibCustomView>()
             var menus = Dictionary<String,XibObject>()
             
             for node in element.children {
@@ -58,20 +62,26 @@ public class XibDefinitionReader {
     
     private func readObject(element: XmlDomElement) -> XibCustomObject {
         print(" - Custom object : \(element.name)")
-        return XibCustomObject(id: element.attribute(name: "id")?.value,
-                               name: element.attribute(name: "userLabel")?.value,
-                               customClass: element.attribute(name: "customClass")?.value)
+        return XibCustomObject(id: element["id"]?.value,
+                               name: element["userLabel"]?.value,
+                               customClass: element["customClass"]?.value)
     }
     
-    private func readWindow(element: XmlDomElement) -> XibObject {
+    private func readWindow(element: XmlDomElement) -> XibWindow {
         print(" - Window : \(element.name)")
         let view: XibCustomView?
-        if let viewElement = element["view"] {
+        if let viewElement = element.child(name: "view") {
             view = readView(element: viewElement)
         } else {
             view = nil
         }
-        return XibWindow(id: element.attribute(name: "id")?.name, view: view)
+        
+        // Read Frame
+        
+        return XibWindow(id: element["id"]?.name,
+                         view: view,
+                         frame: readFrame(node: element.child(name: "rect")),
+                         customClass: element["customClass"]?.value)
     }
     
     private func readSubViews(element: XmlDomElement) -> [XibObject] {
@@ -79,7 +89,7 @@ public class XibDefinitionReader {
         var subViews = [XibObject]()
         
         // Find subview node
-        if let subViewNode = element["subviews"] {
+        if let subViewNode = element.child(name: "subviews") {
             for node in subViewNode.children {
                 if let child = node as? XmlDomElement {
                     switch child.name {
@@ -102,17 +112,19 @@ public class XibDefinitionReader {
     private func readView(element: XmlDomElement) -> XibCustomView {
         print(" - View : \(element.name)")
         let viewDefinitions = readSubViews(element: element)
-        return XibCustomView(id: element.attribute(name: "id")?.name, subViews: viewDefinitions)
+        return XibCustomView(id: element["id"]?.name,
+                             subViews: viewDefinitions,
+                             customClass: element["customClass"]?.value)
     }
     
     private func readButton(element: XmlDomElement) -> XibObject {
         print(" - Button : \(element.name)")
-        return XibObject(id: element.attribute(name: "id")?.name)
+        return XibObject(id: element["id"]?.name)
     }
     
     private func readMenu(element: XmlDomElement) -> XibObject {
         print(" - Menu : \(element.name)")
-        return XibObject(id: element.attribute(name: "id")?.name)
+        return XibObject(id: element["id"]?.name)
     }
     
     public func read(at url: URL) throws ->  XibDefinition {
@@ -127,7 +139,7 @@ public class XibDefinitionReader {
         }
         
         // Read elements
-        guard let objectsElement = rootElement["objects"] else {
+        guard let objectsElement = rootElement.child(name: "objects") else {
             throw XibReaderError.notValid(msg: "No objects node")
         }
         

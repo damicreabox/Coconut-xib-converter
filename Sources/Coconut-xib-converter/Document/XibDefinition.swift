@@ -21,13 +21,13 @@ public class XibDefinition {
 
     public let name: String = "MyUI"
     public let objects: Dictionary<String,XibCustomObject>
-    public let windows: Dictionary<String,XibObject>
-    public let views: Dictionary<String,XibObject>
+    public let windows: Dictionary<String,XibWindow>
+    public let views: Dictionary<String,XibCustomView>
     public let menu: XibObject?
     
     public init(objects: Dictionary<String,XibCustomObject>,
-                windows: Dictionary<String,XibObject>,
-                views: Dictionary<String,XibObject>,
+                windows: Dictionary<String,XibWindow>,
+                views: Dictionary<String,XibCustomView>,
                 menu: XibObject?) {
         self.objects = objects
         self.windows = windows
