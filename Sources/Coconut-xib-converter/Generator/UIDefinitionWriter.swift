@@ -56,17 +56,22 @@ public class UIDefinitionWriter {
         UIDefinitionWriter.write(line: "    private let firstResponder: Responder\n", to: stream)
         
         for object in xibDefinition.objects {
-            customObjectGenerator.definition(object: object.value, to: stream)
+            customObjectGenerator.definition(object: object, to: stream)
         }
         
         var index = 0
         for window in xibDefinition.windows {
-            index = windowGenerator.definition(window: window.value, index: index, to: stream)
+            index = windowGenerator.definition(window: window, index: index, to: stream)
         }
         
         index = 0
         for view in xibDefinition.views {
-            index = viewGenerator.definition(view: view.value, index: index, to: stream)
+            index = viewGenerator.definition(view: view, index: index, to: stream)
+        }
+        
+        index = 0
+        for view in xibDefinition.views {
+            index = viewGenerator.methode(view: view, index: index, to: stream)
         }
         
         UIDefinitionWriter.write(line: "    init() {\n", to: stream)
@@ -75,12 +80,12 @@ public class UIDefinitionWriter {
         
         index = 0
         for window in xibDefinition.windows {
-            index = windowGenerator.instanciation(window: window.value, index: index, to: stream)
+            index = windowGenerator.instanciation(window: window, index: index, to: stream)
         }
         
         index = 0
         for view in xibDefinition.views {
-            index = viewGenerator.instanciation(view: view.value, index: index, to: stream)
+            index = viewGenerator.instanciation(definition: xibDefinition, view: view, index: index, to: stream)
         }
         
         UIDefinitionWriter.write(line: "    }\n", to: stream)
@@ -88,7 +93,12 @@ public class UIDefinitionWriter {
         
         index = 0
         for object in xibDefinition.objects {
-            index = customObjectGenerator.connection(object: object.value, index: index, to: stream)
+            index = customObjectGenerator.connection(object: object, index: index, to: stream)
+        }
+        
+        index = 0
+        for window in xibDefinition.windows {
+            index = windowGenerator.display(window: window, index: index, to: stream)
         }
         
         UIDefinitionWriter.write(line: "        return true\n", to: stream)

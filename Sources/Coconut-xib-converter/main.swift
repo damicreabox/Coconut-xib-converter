@@ -9,7 +9,7 @@ guard let url = URL(string: "Files/MyNewView.xib") else {
 do {
         
     // Set Xib definition
-    let xibDefinition = try XibDefinitionReader().read(at: url)
+    let xibDefinition = try XibDefinitionReader.read(at: url)
     
     // Create writer
     let xibDefinitionWriter = UIDefinitionWriter(xibDefinition: xibDefinition)
