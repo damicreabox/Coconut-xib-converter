@@ -51,6 +51,7 @@ public class UIDefinitionWriter {
         
         // Write header
         UIDefinitionWriter.write(line: "import Foundation\n", to: stream)
+        UIDefinitionWriter.write(line: "import Coconut\n", to: stream)
         UIDefinitionWriter.write(line: "public class \(uiFile) : UIDefinitionDelegate {\n", to: stream)
         UIDefinitionWriter.write(line: "    private let application: Application\n", to: stream)
         UIDefinitionWriter.write(line: "    private let firstResponder: Responder\n", to: stream)

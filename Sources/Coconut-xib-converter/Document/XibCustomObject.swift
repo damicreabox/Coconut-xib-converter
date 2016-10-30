@@ -14,7 +14,7 @@ public class XibCustomObject : XibObject {
     public let customClass: String
     
     init(id: String?, name: String?, customClass: String?) {
-        self.name = name == nil ? "name" : name!
+        self.name = name == nil ? swiftId(id: id) : name!
         self.customClass = customClass == nil ? "NSObject" : customClass!
         super.init(id: id)
     }

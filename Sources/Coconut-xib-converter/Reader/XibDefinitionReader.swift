@@ -15,6 +15,16 @@ public enum XibReaderError : Error {
     case unknow(msg: String)
 }
 
+var idCounter = 0
+func swiftId(id: String?) -> String {
+    guard let id = id else {
+        let vId = "id\(idCounter)"
+        idCounter = idCounter + 1
+        return vId
+    }
+    return "id" + id.replacingOccurrences(of: "-", with: "_");
+}
+
 public class XibDefinitionReader {
  
     func readDefinition(element: XmlDomElement) -> XibDefinition {
