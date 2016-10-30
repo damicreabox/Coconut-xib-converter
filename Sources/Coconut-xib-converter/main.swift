@@ -2,10 +2,6 @@ import LibXml2Swift
 
 import Foundation
 
-guard let url = URL(string: "Files/MyNewView.xib") else {
-    exit(1)
-}
-
 let arguments = CommandLine.arguments
 
 var file = "Files/MyNewView.xib"
@@ -34,9 +30,14 @@ while index < size {
         break
         
     default:
-        break
+        print("Unknow options : \(arguments[index])")
+	break
     }
     index += 1
+}
+
+guard let url = URL(string: file) else {
+    exit(1)
 }
 
 do {
