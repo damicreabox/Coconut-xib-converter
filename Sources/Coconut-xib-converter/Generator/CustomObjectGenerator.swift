@@ -20,14 +20,12 @@ class CustomObjectGenerator {
         }
         
         // Si owner
-        let attrName: String
         if (object.id == "-2") {
-            attrName = "owner"
+            UIDefinitionWriter.write(line: "    public var owner: \(object.customClass)? = nil\n", to: stream)
         } else {
-            attrName = object.name
+            UIDefinitionWriter.write(line: "    public var \(object.name) = \(object.customClass)()\n", to: stream)
         }
         
-        UIDefinitionWriter.write(line: "    private var \(attrName): \(object.customClass)? = nil\n", to: stream)
     }
     
     func connection(object: XibCustomObject, index: Int, to stream: OutputStream) -> Int {
@@ -38,19 +36,16 @@ class CustomObjectGenerator {
         }
         
         // Si owner
-        let attrName: String
         if (object.id == "-2") {
-            attrName = "self.owner"
-        } else {
-            attrName = object.name
+            
+            let attrName = "self.owner"
+            
+            UIDefinitionWriter.write(line: "        if let object = objects?[\(index)] as? \(object.customClass) { \n", to: stream)
+            UIDefinitionWriter.write(line: "            \(attrName) = object\n", to: stream)
+            UIDefinitionWriter.write(line: "        } else {\n", to: stream)
+            UIDefinitionWriter.write(line: "            NSLog(\"\\\"\(object.name)\\\" not an \\\"\(object.customClass)\\\"\")\n", to: stream)
+            UIDefinitionWriter.write(line: "        }\n", to: stream)
         }
-        
-        
-        UIDefinitionWriter.write(line: "        if let object = objects?[\(index)] as? \(object.customClass) { \n", to: stream)
-        UIDefinitionWriter.write(line: "            \(attrName) = object\n", to: stream)
-        UIDefinitionWriter.write(line: "        } else {\n", to: stream)
-        UIDefinitionWriter.write(line: "            NSLog(\"\\\"\(object.name)\\\" not an \\\"\(object.customClass)\\\"\")\n", to: stream)
-        UIDefinitionWriter.write(line: "        }\n", to: stream)
         
         return index + 1
     }

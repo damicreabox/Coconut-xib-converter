@@ -15,7 +15,7 @@ class ViewGenerator {
     
     // Definitions
     func definition(view: XibCustomView, index: Int, to stream: OutputStream) -> Int {
-        UIDefinitionWriter.write(line: "    private let view\(index): \(view.customClass)\n", to: stream)
+        UIDefinitionWriter.write(line: "    public let view\(index): \(view.customClass)\n", to: stream)
         return index + 1
     }
     

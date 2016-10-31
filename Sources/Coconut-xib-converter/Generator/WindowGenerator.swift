@@ -12,7 +12,7 @@ class WindowGenerator {
     
     // Definitions
     func definition(window: XibWindow, index: Int, to stream: OutputStream) -> Int {
-        UIDefinitionWriter.write(line: "    private let window\(index): \(window.customClass)\n", to: stream)
+        UIDefinitionWriter.write(line: "    public let window\(index): \(window.customClass)\n", to: stream)
         return index + 1
     }
     

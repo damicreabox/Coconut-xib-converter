@@ -53,8 +53,8 @@ public class UIDefinitionWriter {
         UIDefinitionWriter.write(line: "import Foundation\n", to: stream)
         UIDefinitionWriter.write(line: "import Coconut\n", to: stream)
         UIDefinitionWriter.write(line: "public class \(uiFile) : UIDefinitionDelegate {\n", to: stream)
-        UIDefinitionWriter.write(line: "    private let application: Application\n", to: stream)
-        UIDefinitionWriter.write(line: "    private let firstResponder: Responder\n", to: stream)
+        UIDefinitionWriter.write(line: "    public let application: Application\n", to: stream)
+        UIDefinitionWriter.write(line: "    public let firstResponder: Responder\n", to: stream)
         
         for object in xibDefinition.objects {
             customObjectGenerator.definition(object: object, to: stream)
