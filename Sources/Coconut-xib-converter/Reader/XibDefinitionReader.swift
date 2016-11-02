@@ -25,27 +25,27 @@ func swiftId(id: String?) -> String {
     return "id" + id.replacingOccurrences(of: "-", with: "_");
 }
 
-public class XibDefinitionReader {
+class XibDefinitionReader {
  
-    func readDefinition(element: XmlDomElement) -> XibDefinition {
+    func read(element: XmlDomElement) -> UiDefinitionFile {
         
         // Create definiton
-        let definition = XibDefinition()
+        let definition = UiDefinitionFile()
         
         for node in element.children {
             if let child = node as? XmlDomElement {
                 switch child.name {
                 case "customObject":
-                    definition.objects.append(XibCustomObjectReader().readObject(element: child))
+                    definition.customObjects.append(XibCustomObjectReader().read(element: child))
                     break
                 case "window":
-                    definition.windows.append(XibWindowReader().readWindow(element: child))
+                    definition.views.append(XibWindowReader().read(element: child))
                     break
                 case "customView":
-                    definition.views.append(XibViewReader().readView(element: child))
+                    definition.views.append(XibViewReader().read(element: child))
                     break
                 case "menu":
-                    definition.menu = XibMenuReader().readMenu(element: child)
+                    //definition.menu = XibMenuReader().readMenu(element: child)
                     break
                 default:
                     print("Unknow element: \(child.name)")
@@ -56,7 +56,7 @@ public class XibDefinitionReader {
         return definition
     }
     
-    public static func read(at url: URL) throws ->  XibDefinition {
+    static func read(at url: URL) throws ->  UiDefinitionFile {
         
         // Read XML document
         let rootXibDocument = try XmlDomReader.read(atPath: url)
@@ -73,6 +73,6 @@ public class XibDefinitionReader {
         }
         
         // Read all objects
-        return XibDefinitionReader().readDefinition(element: objectsElement)
+        return XibDefinitionReader().read(element: objectsElement)
     }
 }

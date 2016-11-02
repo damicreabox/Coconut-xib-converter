@@ -42,14 +42,14 @@ guard let url = URL(string: file) else {
 
 do {
         
-    // Set Xib definition
-    let xibDefinition = try XibDefinitionReader.read(at: url)
+    // Set ui definition
+    let uiDefinition = try XibDefinitionReader.read(at: url)
     
     // Create writer
-    let xibDefinitionWriter = UIDefinitionWriter(xibDefinition: xibDefinition)
+    let uiDefinitionWriter = UIDefinitionWriter(uiDefinition: uiDefinition)
     
     // Generate files
-    try xibDefinitionWriter.write(at: URL(fileURLWithPath: output))
+    try uiDefinitionWriter.write(at: URL(fileURLWithPath: output))
         
 } catch {
     print("\(error)")

@@ -10,10 +10,10 @@ import Foundation
 
 public class UIDefinitionWriter {
     
-    private let xibDefinition: XibDefinition
+    private let uiDefinition: UiDefinitionFile
     
-    init(xibDefinition: XibDefinition) {
-        self.xibDefinition = xibDefinition
+    init(uiDefinition: UiDefinitionFile) {
+        self.uiDefinition = uiDefinition
     }
     
     internal static func write(line: String, to stream: OutputStream) {
@@ -31,14 +31,11 @@ public class UIDefinitionWriter {
         // View generator
         let viewGenerator = ViewGenerator()
         
-        // Window generator
-        let windowGenerator = WindowGenerator()
-        
         
         // FIXME Test directory
         
         // UI file
-        let uiFile = xibDefinition.name
+        let uiFile = uiDefinition.name
         
         let xibFile = url.appendingPathComponent("\(uiFile).swift")
         
@@ -56,50 +53,39 @@ public class UIDefinitionWriter {
         UIDefinitionWriter.write(line: "    public let application: Application\n", to: stream)
         UIDefinitionWriter.write(line: "    public let firstResponder: Responder\n", to: stream)
         
-        for object in xibDefinition.objects {
-            customObjectGenerator.definition(object: object, to: stream)
-        }
-        
-        var index = 0
-        for window in xibDefinition.windows {
-            index = windowGenerator.definition(window: window, index: index, to: stream)
+        for object in uiDefinition.customObjects {
+            customObjectGenerator.attributeDefinition(object: object, to: stream)
         }
         
         index = 0
-        for view in xibDefinition.views {
-            index = viewGenerator.definition(view: view, index: index, to: stream)
-        }
-        
-        index = 0
-        for view in xibDefinition.views {
-            index = viewGenerator.methode(view: view, index: index, to: stream)
+        for view in uiDefinition.views {
+            viewGenerator.attributeDefinition(view: view, index: index, to: stream)
+            index = index + 1
         }
         
         UIDefinitionWriter.write(line: "    init() {\n", to: stream)
         UIDefinitionWriter.write(line: "        self.application = Application.shared()\n", to: stream)
         UIDefinitionWriter.write(line: "        self.firstResponder = application\n", to: stream)
-        
+  
         index = 0
-        for window in xibDefinition.windows {
-            index = windowGenerator.instanciation(window: window, index: index, to: stream)
-        }
-        
-        index = 0
-        for view in xibDefinition.views {
-            index = viewGenerator.instanciation(definition: xibDefinition, view: view, index: index, to: stream)
+        for view in uiDefinition.views {
+            viewGenerator.createAttributeView(definition: uiDefinition, viewDefinition: view, index: index, to: stream)
+            index = index + 1
         }
         
         UIDefinitionWriter.write(line: "    }\n", to: stream)
         UIDefinitionWriter.write(line: "    public func instantiate(owner: Any?, objects: [NSObjectProtocol]?) -> Bool {\n", to: stream)
         
         index = 0
-        for object in xibDefinition.objects {
-            index = customObjectGenerator.connection(object: object, index: index, to: stream)
+        for object in uiDefinition.customObjects {
+            customObjectGenerator.attributeConnection(object: object, index: index, to: stream)
+            index = index + 1
         }
         
         index = 0
-        for window in xibDefinition.windows {
-            index = windowGenerator.display(window: window, index: index, to: stream)
+        for viewDefinition in uiDefinition.views {
+            viewGenerator.createVariableView(viewDefinition: viewDefinition, index: index, to: stream)
+            index = index + 1
         }
         
         UIDefinitionWriter.write(line: "        return true\n", to: stream)

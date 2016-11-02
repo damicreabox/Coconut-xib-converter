@@ -10,13 +10,13 @@ import Foundation
 
 import LibXml2Swift
 
-class XibWindowReader {
+class XibWindowReader : XibElementReader {
     
-    func readWindow(element: XmlDomElement) -> XibWindow {
+    func read(element: XmlDomElement) -> UiWindowDefinition {
         print(" - Window : \(element.name)")
-        let view: XibCustomView?
+        let view: UiViewDefinition?
         if let viewElement = element.child(name: "view") {
-            view = XibViewReader().readView(element: viewElement)
+            view = XibViewReader().read(element: viewElement)
         } else {
             view = nil
         }
@@ -27,10 +27,10 @@ class XibWindowReader {
         // Find content rect
         let contentRect = rects["contentRect"]
         
-        return XibWindow(id: element["id"]?.name,
+        return UiWindowDefinition(id: readId(element: element),
                          view: view,
                          frame: contentRect == nil ? NSRect() : contentRect!,
-                         customClass: element["customClass"]?.value,
-                         title: element["title"]?.value)
+                         customClass: readCustomClass(element: element, defaultValue: "Window"),
+                         title: readText(element: element, attr: "title"))
     }
 }

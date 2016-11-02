@@ -25,6 +25,15 @@ class WindowGenerator {
         if let title = window.title {
             UIDefinitionWriter.write(line: "        self.window\(index).title = \"\(title)\"\n", to: stream)
         }
+        
+        // View generator
+        let viewGenerator = ViewGenerator()
+        
+        let mainViewName = "window\(index)View"
+        
+        // Create view
+        //viewGenerator.createView(viewDefinition: window.view, name: mainViewName, to: stream)
+        
         return index + 1
     }
     

@@ -12,7 +12,7 @@ import Foundation
 class CustomObjectGenerator {
     
     // Write objects
-    func definition(object: XibCustomObject, to stream: OutputStream) {
+    func attributeDefinition(object: CustomObjectDefinition, to stream: OutputStream) {
         
         // Si First responder ou application
         if (object.id == "-1" || object.id == "-3") {
@@ -28,11 +28,11 @@ class CustomObjectGenerator {
         
     }
     
-    func connection(object: XibCustomObject, index: Int, to stream: OutputStream) -> Int {
+    func attributeConnection(object: CustomObjectDefinition, index: Int, to stream: OutputStream) {
         
         // Si first responder ou application
         if (object.id == "-1" || object.id == "-3") {
-            return index
+            return
         }
         
         // Si owner
@@ -46,7 +46,5 @@ class CustomObjectGenerator {
             UIDefinitionWriter.write(line: "            NSLog(\"\\\"\(object.name)\\\" not an \\\"\(object.customClass)\\\"\")\n", to: stream)
             UIDefinitionWriter.write(line: "        }\n", to: stream)
         }
-        
-        return index + 1
     }
 }

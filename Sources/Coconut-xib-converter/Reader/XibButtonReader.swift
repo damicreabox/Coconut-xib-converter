@@ -10,10 +10,10 @@ import Foundation
 
 import LibXml2Swift
 
-class XibButtonReader {
+class XibButtonReader : XibElementReader {
     
-    func readButton(element: XmlDomElement) -> XibObject {
+    func read(element: XmlDomElement) -> UiButtonDefinition {
         print(" - Button : \(element.name)")
-        return XibObject(id: element["id"]?.name)
+        return UiButtonDefinition(id: readId(element: element), customClass: "Button")
     }
 }

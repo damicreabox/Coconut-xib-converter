@@ -10,10 +10,10 @@ import Foundation
 
 public class XibCustomView : XibObject {
     
-    public let subViews: [XibObject]
+    public let subViews: [XibCustomView]
     public let customClass : String
     
-    init(id: String?, subViews: [XibObject], customClass: String?) {
+    init(id: String?, subViews: [XibCustomView] = [XibCustomView](), customClass: String?) {
         self.subViews = subViews
         self.customClass = customClass == nil ? "View" : customClass!
         super.init(id: id)

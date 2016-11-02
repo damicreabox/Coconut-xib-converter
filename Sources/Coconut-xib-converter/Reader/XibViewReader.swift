@@ -10,11 +10,11 @@ import Foundation
 
 import LibXml2Swift
 
-class XibViewReader {
+class XibViewReader : XibElementReader {
     
-    func readSubViews(element: XmlDomElement) -> [XibObject] {
+    func readSubViews(element: XmlDomElement) -> [UiViewDefinition] {
         
-        var subViews = [XibObject]()
+        var subViews = [UiViewDefinition]()
         
         // Find subview node
         if let subViewNode = element.child(name: "subviews") {
@@ -22,10 +22,10 @@ class XibViewReader {
                 if let child = node as? XmlDomElement {
                     switch child.name {
                     case "button":
-                        subViews.append(XibButtonReader().readButton(element: child))
+                        subViews.append(XibButtonReader().read(element: child))
                         break
                     case "customView":
-                        subViews.append(readView(element: child))
+                        subViews.append(read(element: child))
                         break
                     default:
                         print("Unknow element: \(child.name)")
@@ -37,11 +37,11 @@ class XibViewReader {
         return subViews
     }
     
-    func readView(element: XmlDomElement) -> XibCustomView {
+    func read(element: XmlDomElement) -> UiViewDefinition {
         print(" - View : \(element.name)")
         let viewDefinitions = readSubViews(element: element)
-        return XibCustomView(id: element["id"]?.name,
-                             subViews: viewDefinitions,
-                             customClass: element["customClass"]?.value)
+        return UiViewDefinition(id: readId(element: element),
+                                subViews: viewDefinitions,
+                                customClass: readCustomClass(element: element, defaultValue: "View"))
     }
 }

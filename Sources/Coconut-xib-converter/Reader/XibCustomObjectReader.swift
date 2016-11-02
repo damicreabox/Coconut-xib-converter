@@ -10,13 +10,33 @@ import Foundation
 
 import LibXml2Swift
 
-class XibCustomObjectReader {
+class XibCustomObjectReader : XibElementReader {
     
-    func readObject(element: XmlDomElement) -> XibCustomObject {
+    func read(element: XmlDomElement) -> CustomObjectDefinition {
         print(" - Custom object : \(element.name)")
-        return XibCustomObject(id: element["id"]?.value,
-                               name: element["userLabel"]?.value,
-                               customClass: element["customClass"]?.value)
+        
+        // Read id
+        let id = readId(element: element)
+        var name: String
+        switch id {
+        case "-1":
+            name = "firstResponder"
+            break
+        case "-2":
+            name = "owner"
+            break
+        case "-3":
+            name = "application"
+            break
+        default:
+            name = readText(element: element, attr: "userLabel", defaultValue: convertIdToName(id: id))
+            break
+        }
+        
+        
+        return CustomObjectDefinition(id: id,
+                                      name: name,
+                                      customClass: readCustomClass(element: element, defaultValue: "NSObject"))
     }
     
 }

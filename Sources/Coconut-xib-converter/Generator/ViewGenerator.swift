@@ -14,22 +14,24 @@ class ViewGenerator {
     // ------ Views ------
     
     // Definitions
-    func definition(view: XibCustomView, index: Int, to stream: OutputStream) -> Int {
+    func attributeDefinition(view: UiViewDefinition, index: Int, to stream: OutputStream) {
         UIDefinitionWriter.write(line: "    public let view\(index): \(view.customClass)\n", to: stream)
-        return index + 1
     }
     
-    // Create méthode
-    func methode(view: XibCustomView, index: Int, to stream: OutputStream) -> Int {
-        UIDefinitionWriter.write(line: "    static func createView\(index)() -> View {\n", to: stream)
-        UIDefinitionWriter.write(line: "        return View()\n", to: stream)
-        UIDefinitionWriter.write(line: "    }\n", to: stream)
-        return index + 1
+    
+    func createAttributeView(definition: UiDefinitionFile, viewDefinition: UiViewDefinition, index: Int, to stream: OutputStream) {
+        let name = "self.view\(index)"
+        UIDefinitionWriter.write(line: "        \(name) = ", to: stream)
+        createView(viewDefinition: viewDefinition, name: name, to: stream)
     }
     
-    // Definitions
-    func instanciation(definition: XibDefinition, view: XibCustomView, index: Int, to stream: OutputStream) -> Int {
-        UIDefinitionWriter.write(line: "        self.view\(index) = \(definition.name).createView\(index)()\n", to: stream)
-        return index + 1
+    func createVariableView(viewDefinition: UiViewDefinition, index: Int, to stream: OutputStream) {
+        let name = "view\(index)"
+        UIDefinitionWriter.write(line: "        var \(name) = ", to: stream)
+        createView(viewDefinition: viewDefinition, name: name, to: stream)
+    }
+    
+    private func createView(viewDefinition: UiViewDefinition, name: String, to stream: OutputStream) {
+        UIDefinitionWriter.write(line: "\(viewDefinition.customClass)()\n", to: stream)
     }
 }
