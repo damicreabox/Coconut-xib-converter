@@ -10,6 +10,7 @@ import Foundation
 
 class WindowGenerator {
     
+    /*
     // Definitions
     func definition(window: XibWindow, index: Int, to stream: OutputStream) -> Int {
         UIDefinitionWriter.write(line: "    public let window\(index): \(window.customClass)\n", to: stream)
@@ -41,5 +42,6 @@ class WindowGenerator {
     func display(window: XibWindow, index: Int, to stream: OutputStream) -> Int {
         UIDefinitionWriter.write(line: "        window\(index).makeKeyAndOrderFront(window\(index))\n", to: stream)
         return index + 1
-    }
+     }
+     */
 }

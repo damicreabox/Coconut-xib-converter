@@ -36,7 +36,17 @@ class XibDefinitionReader {
             if let child = node as? XmlDomElement {
                 switch child.name {
                 case "customObject":
-                    definition.customObjects.append(XibCustomObjectReader().read(element: child))
+                    let customObject = XibCustomObjectReader().read(element: child)
+                    switch(customObject.id) {
+                    case "-2" :
+                        definition.owner = customObject
+                        break
+                    case "-1", "-3" :
+                        break
+                    default:
+                        definition.customObjects.append(customObject)
+                    }
+                    
                     break
                 case "window":
                     definition.views.append(XibWindowReader().read(element: child))

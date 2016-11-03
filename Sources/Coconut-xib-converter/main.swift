@@ -49,7 +49,7 @@ do {
     let uiDefinitionWriter = UIDefinitionWriter(uiDefinition: uiDefinition)
     
     // Generate files
-    try uiDefinitionWriter.write(at: URL(fileURLWithPath: output))
+    try UiDefinitionFileGenerator().generate(uiDefinitionFile: uiDefinition, at: URL(fileURLWithPath: output))
         
 } catch {
     print("\(error)")

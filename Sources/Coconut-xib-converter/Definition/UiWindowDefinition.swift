@@ -10,12 +10,18 @@ import Foundation
 
 class UiWindowDefinition : UiViewDefinition {
     
-    var frame: NSRect?
+    var contentRect: NSRect
     var title: String
     
-    init(id: String, view: UiViewDefinition?, frame: NSRect?, customClass: String, title: String) {
+    override var viewType: UiViewType {
+        get {
+            return UiViewType.window
+        }
+    }
+    
+    init(id: String, view: UiViewDefinition?, contentRect: NSRect, customClass: String, title: String) {
         
-        self.frame = frame
+        self.contentRect = contentRect
         self.title = title
         
         var views = [UiViewDefinition]()

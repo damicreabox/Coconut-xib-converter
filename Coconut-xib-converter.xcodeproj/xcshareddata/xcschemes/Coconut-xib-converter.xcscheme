@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "______Target_LibXml2Swift"
+               BlueprintIdentifier = "OBJ_52"
                BuildableName = "LibXml2Swift.framework"
                BlueprintName = "LibXml2Swift"
                ReferencedContainer = "container:Coconut-xib-converter.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "______Target_Coconut_xib_converter"
+               BlueprintIdentifier = "OBJ_64"
                BuildableName = "Coconut-xib-converter"
                BlueprintName = "Coconut-xib-converter"
                ReferencedContainer = "container:Coconut-xib-converter.xcodeproj">
@@ -59,7 +59,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "______Target_LibXml2Swift"
+            BlueprintIdentifier = "OBJ_52"
             BuildableName = "LibXml2Swift.framework"
             BlueprintName = "LibXml2Swift"
             ReferencedContainer = "container:Coconut-xib-converter.xcodeproj">

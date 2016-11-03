@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum ConverterError : Error {
+    case unknowError(msg: String)
+}
+
 public class UIDefinitionWriter {
     
     private let uiDefinition: UiDefinitionFile

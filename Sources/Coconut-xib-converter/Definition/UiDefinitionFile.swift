@@ -12,6 +12,7 @@ import Foundation
 class UiDefinitionFile {
     
     var name: String = "MyUi"
+    var owner: CustomObjectDefinition? = nil
     var customObjects = [CustomObjectDefinition]()
     var views = [UiViewDefinition]()
 }

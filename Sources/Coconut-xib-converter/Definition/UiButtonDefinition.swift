@@ -10,4 +10,9 @@ import Foundation
 
 class UiButtonDefinition : UiViewDefinition {
     
+    override var viewType: UiViewType {
+        get {
+            return UiViewType.button
+        }
+    }
 }

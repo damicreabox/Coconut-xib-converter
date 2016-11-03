@@ -12,8 +12,10 @@ import LibXml2Swift
 
 class XibMenuReader {
     
+    /*
     func readMenu(element: XmlDomElement) -> XibObject {
         print(" - Menu : \(element.name)")
         return XibObject(id: element["id"]?.name)
     }
+    */
 }
