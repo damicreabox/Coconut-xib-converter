@@ -24,8 +24,12 @@ class DefinitionFactory {
     private var objectCount = -1
     
     private func registerDefinition<T: UiDefinition>(definition: T) -> T {
-        elements[definition.vName] = definition
+        elements[definition.id] = definition
         return definition
+    }
+    
+    public func getDefinition(id: String) -> UiDefinition? {
+        return elements[id]
     }
     
     func window(id: String) -> UiWindowDefinition {

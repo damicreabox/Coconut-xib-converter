@@ -17,24 +17,29 @@ class XibCustomObjectReader : XibElementReader {
         
         // Read id
         let id = readId(element: element)
+        
+        // Custom object
+        let customObject = DefinitionFactory.instance.customObject(id: id)
+        
         var name: String
         switch id {
         case "-1":
             name = "firstResponder"
+            customObject.vName = "firstResponderObject"
             break
         case "-2":
             name = "owner"
+            customObject.vName = "ownerObject"
             break
         case "-3":
             name = "application"
+            customObject.vName = "applicationObject"
             break
         default:
             name = readText(element: element, attr: "userLabel", defaultValue: convertIdToName(id: id))
             break
         }
         
-        // Custom object
-        let customObject = DefinitionFactory.instance.customObject(id: id)
         
         // Set name
         customObject.name = name

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Generate rect
 class RectGenerator {
     
     func newInstance(rect: NSRect) -> String {

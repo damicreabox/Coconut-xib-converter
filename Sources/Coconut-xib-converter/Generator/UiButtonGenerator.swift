@@ -8,46 +8,24 @@
 
 import Foundation
 
-class UiButtonGenerator : UiGenerator {
+class UiButtonGeneratorDelegate : UIObjectGeneratorDelegate<UiButtonDefinition> {
     
-    func convert(definition: UiDefinitionObject) throws -> UiButtonDefinition {
-        if let window = definition as? UiButtonDefinition {
-            return window
+    
+    override func generateBefore(definition: UiButtonDefinition, output stream: GeneratorStream) throws {
+        
+        if let actionDefinition = definition.action {
+            try UiActionGenerator().generateVariable(definition: actionDefinition, output: stream)
         }
-        
-        throw GeneratorError.unknown(msg: "Unable to cast")
     }
     
-    func generateAttributeDefinition(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-        stream.writeLine("  public var \(definition.vName): Button")
-    }
-    
-    func generateAttribute(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-        try generateButton(prefix: "self.", definition: definition, output: stream)
-    }
-    
-    func generateVariable(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-        try generateButton(prefix: "let ", definition: definition, output: stream)
-    }
-    
-    func generateButton(prefix: String, definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-        let uiButtonDefinition = try convert(definition: definition)
+    override func generateInstanciation(definition: UiButtonDefinition, output stream: GeneratorStream) throws {
         
-        if let actionDefinition = uiButtonDefinition.action {
-            stream.writeLine("      let \(actionDefinition.vName) = EmptyAction()")
-        }
+        stream.write("Button(title: \"\(definition.title)\"")
         
-        stream.write("      \(prefix)\(definition.vName) = Button(title: \"\(uiButtonDefinition.title)\"")
-        
-        if let actionDefinition = uiButtonDefinition.action {
+        if let actionDefinition = definition.action {
             stream.write(", action: \(actionDefinition.vName)")
         }
         
-        stream.writeLine(")")
-    }
-    
-    func generateInstanciate(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-        
-        
+        stream.write(")")
     }
 }

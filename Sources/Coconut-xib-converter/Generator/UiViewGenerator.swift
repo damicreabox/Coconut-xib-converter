@@ -8,46 +8,17 @@
 
 import Foundation
 
-class UiViewGenerator : UiGenerator {
+class UiViewGeneratorDelegate : UIObjectGeneratorDelegate<UiViewDefinition> {
     
-    func convert(definition: UiDefinitionObject) throws -> UiViewDefinition {
-        if let view = definition as? UiViewDefinition {
-            return view
-        }
-        
-        throw GeneratorError.unknown(msg: "Unable to cast")
+    override func generateInstanciation(definition: UiViewDefinition, output stream: GeneratorStream) throws {
+        stream.write("View()")
     }
     
-    func generateAttributeDefinition(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-        stream.writeLine("  public var \(definition.vName)): View")
-    }
-    
-    func generateAttribute(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-        let name = definition.vName
-        stream.write("      self.\(name)")
-        try generateView(definition: definition, output: stream)
-
-    }
-    
-    func generateVariable(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-        let name = definition.vName
-        stream.write("      let \(name)")
-        try generateView(definition: definition, output: stream)
-    }
-    
-    func generateInstanciate(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-    }
-    
-    // --- Generate view content ---
-    
-    func generateView(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-        stream.writeLine(" = View()")
-        let view = try convert(definition: definition)
-        for subView in view.views {
+    override func generateAfter(definition: UiViewDefinition, output stream: GeneratorStream) throws {
+        for subView in definition.views {
             let generator = try UiGeneratorSelector.instance.findGenerator(definition: subView)
             try generator.generateVariable(definition: subView, output: stream)
-            stream.writeLine("      \(view.vName).addSubview(\(subView.vName))")
+            stream.writeLine("\(definition.vName).addSubview(\(subView.vName))")
         }
     }
-    
 }

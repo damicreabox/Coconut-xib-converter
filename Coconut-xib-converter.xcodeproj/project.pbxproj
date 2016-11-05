@@ -32,7 +32,6 @@
 		OBJ_81 /* UiButtonGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* UiButtonGenerator.swift */; };
 		OBJ_82 /* UiDefinitionFileGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* UiDefinitionFileGenerator.swift */; };
 		OBJ_84 /* UiViewGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* UiViewGenerator.swift */; };
-		OBJ_85 /* UiViewGeneratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* UiViewGeneratorProtocol.swift */; };
 		OBJ_86 /* UiWindowGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* UiWindowGenerator.swift */; };
 		OBJ_89 /* XibButtonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* XibButtonReader.swift */; };
 		OBJ_90 /* XibCustomObjectReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* XibCustomObjectReader.swift */; };
@@ -80,7 +79,6 @@
 		OBJ_30 /* UiButtonGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiButtonGenerator.swift; sourceTree = "<group>"; };
 		OBJ_31 /* UiDefinitionFileGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiDefinitionFileGenerator.swift; sourceTree = "<group>"; };
 		OBJ_33 /* UiViewGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewGenerator.swift; sourceTree = "<group>"; };
-		OBJ_34 /* UiViewGeneratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewGeneratorProtocol.swift; sourceTree = "<group>"; };
 		OBJ_35 /* UiWindowGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiWindowGenerator.swift; sourceTree = "<group>"; };
 		OBJ_39 /* XibButtonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibButtonReader.swift; sourceTree = "<group>"; };
 		OBJ_40 /* XibCustomObjectReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibCustomObjectReader.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 				OBJ_30 /* UiButtonGenerator.swift */,
 				OBJ_31 /* UiDefinitionFileGenerator.swift */,
 				OBJ_33 /* UiViewGenerator.swift */,
-				OBJ_34 /* UiViewGeneratorProtocol.swift */,
 				OBJ_35 /* UiWindowGenerator.swift */,
 				375867A21DCD54210016AE0A /* UiGeneratorSelector.swift */,
 				37175F791DCE157B00112907 /* UiActionGenerator.swift */,
@@ -325,7 +322,6 @@
 				375867A31DCD54210016AE0A /* UiGeneratorSelector.swift in Sources */,
 				OBJ_82 /* UiDefinitionFileGenerator.swift in Sources */,
 				OBJ_84 /* UiViewGenerator.swift in Sources */,
-				OBJ_85 /* UiViewGeneratorProtocol.swift in Sources */,
 				OBJ_86 /* UiWindowGenerator.swift in Sources */,
 				OBJ_89 /* XibButtonReader.swift in Sources */,
 				37175F7A1DCE157B00112907 /* UiActionGenerator.swift in Sources */,

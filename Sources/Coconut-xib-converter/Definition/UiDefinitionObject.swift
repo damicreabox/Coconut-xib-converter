@@ -19,11 +19,14 @@ enum UiDefinitionType {
 class UiDefinition {
     
     let id: String
-    let vName: String
+    var vName: String
+    var customClass: String
+
     
-    init(id: String, vName: String) {
+    init(id: String, vName: String, customClass: String) {
         self.id = id
         self.vName = vName
+        self.customClass = customClass
     }
 }
 
@@ -31,12 +34,10 @@ class UiDefinitionObject :UiDefinition {
     
     
     let uiDefinitionType : UiDefinitionType
-    var customClass: String
     
     
     init(id: String, uiDefinitionType : UiDefinitionType, vName: String, customClass: String) {
         self.uiDefinitionType = uiDefinitionType
-        self.customClass = customClass
-        super.init(id: id, vName: vName)
+        super.init(id: id, vName: vName, customClass: customClass)
     }
 }

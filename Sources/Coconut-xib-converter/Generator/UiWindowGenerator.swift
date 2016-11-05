@@ -8,48 +8,28 @@
 
 import Foundation
 
-class UiWindowGenerator : UiGenerator {
+class UiWindowGeneratorDelegate : UIObjectGeneratorDelegate<UiWindowDefinition> {
     
-    func convert(definition: UiDefinitionObject) throws -> UiWindowDefinition {
-        if let window = definition as? UiWindowDefinition {
-            return window
-        }
-        
-        throw GeneratorError.unknown(msg: "Unable to cast")
+    override func generateBefore(definition: UiWindowDefinition, output stream: GeneratorStream) throws {
+        stream.writeLine("let \(definition.vName)Frame = \(RectGenerator().newInstance(rect: definition.contentRect))")
     }
     
-    func generateAttributeDefinition(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-        stream.writeLine("  public var \(definition.vName): Window")
+    override func generateInstanciation(definition: UiWindowDefinition, output stream: GeneratorStream) throws {
+        stream.write("Window(contentRect: \(definition.vName)Frame)")
     }
     
-    func generateAttribute(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-        
-        let uiWindowDefinition = try convert(definition: definition)
-        let name = definition.vName
-        
-        // Create window
-        stream.writeLine("      let \(name)Frame = \(RectGenerator().newInstance(rect: uiWindowDefinition.contentRect))")
-        stream.writeLine("      self.\(name) = Window(contentRect: \(name)Frame)")
+    override func generateAfter(definition: UiWindowDefinition, output stream: GeneratorStream) throws {
         
         // Set title
-        stream.writeLine("      \(name).title = \"\(uiWindowDefinition.title)\"")
+        stream.writeLine("\(definition.vName).title = \"\(definition.title)\"")
         
-        if let view = uiWindowDefinition.view {
+        if let view = definition.view {
             
             let generator = try UiGeneratorSelector.instance.findGenerator(definition: view)
             
             try generator.generateVariable(definition: view, output: stream)
-            stream.writeLine("      \(name).contentView = \(view.vName)")
+            stream.writeLine("\(definition.vName).contentView = \(view.vName)")
         }
+        stream.writeLine("\(definition.vName).makeKeyAndOrderFront(\(definition.vName))")
     }
-
-    func generateVariable(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-        
-    }
-
-    func generateInstanciate(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-        let uiWindowDefinition = try convert(definition: definition)
-        stream.writeLine("      \(uiWindowDefinition.vName).makeKeyAndOrderFront(\(uiWindowDefinition.vName))")
-    }
-
 }
