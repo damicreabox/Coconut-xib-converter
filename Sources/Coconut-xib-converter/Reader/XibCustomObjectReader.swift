@@ -35,6 +35,7 @@ class XibCustomObjectReader : XibElementReader {
         
         
         return CustomObjectDefinition(id: id,
+                                      vName: VNameGenerator.instance.createCustomObjectVName(),
                                       name: name,
                                       customClass: readCustomClass(element: element, defaultValue: "NSObject"))
     }

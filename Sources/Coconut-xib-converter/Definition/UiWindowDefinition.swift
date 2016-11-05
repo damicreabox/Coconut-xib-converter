@@ -8,27 +8,23 @@
 
 import Foundation
 
-class UiWindowDefinition : UiViewDefinition {
+class UiWindowDefinition : UiDefinitionObject {
     
     var contentRect: NSRect
     var title: String
+    var view : UiViewDefinition?
     
-    override var viewType: UiViewType {
-        get {
-            return UiViewType.window
-        }
-    }
-    
-    init(id: String, view: UiViewDefinition?, contentRect: NSRect, customClass: String, title: String) {
+    init(id: String, vName: String, view: UiViewDefinition?, contentRect: NSRect, customClass: String, title: String) {
         
         self.contentRect = contentRect
         self.title = title
+        self.view = view
         
         var views = [UiViewDefinition]()
         if let view = view {
             views.append(view)
         }
         
-        super.init(id: id, subViews: views, customClass: customClass)
+        super.init(id: id, uiDefinitionType: .window, vName: vName, customClass: customClass)
     }
 }

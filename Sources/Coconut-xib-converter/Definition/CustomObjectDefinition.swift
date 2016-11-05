@@ -11,8 +11,8 @@ import Foundation
 class CustomObjectDefinition : UiDefinitionObject {
     
     var name: String
-    init(id: String, name: String, customClass: String) {
+    init(id: String, vName: String, name: String, customClass: String) {
         self.name = name
-        super.init(id: id, customClass: customClass)
+        super.init(id: id, uiDefinitionType: .customObject, vName: vName, customClass: customClass)
     }
 }

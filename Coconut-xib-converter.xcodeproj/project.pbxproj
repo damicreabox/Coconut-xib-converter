@@ -7,13 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3714356C1DCBDC95008053E2 /* UiDefinitionFileGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371435691DCBDB57008053E2 /* UiDefinitionFileGenerator.swift */; };
-		3714356E1DCBDE6D008053E2 /* GeneratorStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3714356D1DCBDE6D008053E2 /* GeneratorStream.swift */; };
-		371435701DCBE5C5008053E2 /* UiViewGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3714356F1DCBE5C5008053E2 /* UiViewGenerator.swift */; };
-		371435721DCBEE95008053E2 /* UiViewGeneratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371435711DCBEE95008053E2 /* UiViewGeneratorProtocol.swift */; };
-		371435741DCBEF26008053E2 /* UiButtonGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371435731DCBEF26008053E2 /* UiButtonGenerator.swift */; };
-		371435761DCBEF37008053E2 /* UiWindowGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371435751DCBEF37008053E2 /* UiWindowGenerator.swift */; };
-		371435781DCBF511008053E2 /* GeneratorTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371435771DCBF511008053E2 /* GeneratorTools.swift */; };
+		375867A11DCD4B380016AE0A /* VNameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375867A01DCD4B380016AE0A /* VNameGenerator.swift */; };
+		375867A31DCD54210016AE0A /* UiGeneratorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375867A21DCD54210016AE0A /* UiGeneratorSelector.swift */; };
 		OBJ_57 /* XmlDomAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* XmlDomAttribute.swift */; };
 		OBJ_58 /* XmlDomDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* XmlDomDocument.swift */; };
 		OBJ_59 /* XmlDomElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* XmlDomElement.swift */; };
@@ -28,24 +23,27 @@
 		OBJ_74 /* UiDefinitionRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* UiDefinitionRegister.swift */; };
 		OBJ_75 /* UiViewDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* UiViewDefinition.swift */; };
 		OBJ_76 /* UiWindowDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* UiWindowDefinition.swift */; };
-		OBJ_83 /* CustomObjectGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* CustomObjectGenerator.swift */; };
-		OBJ_84 /* RectGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* RectGenerator.swift */; };
-		OBJ_85 /* UIDefinitionWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* UIDefinitionWriter.swift */; };
-		OBJ_86 /* ViewGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* ViewGenerator.swift */; };
-		OBJ_87 /* WindowGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* WindowGenerator.swift */; };
-		OBJ_88 /* XibButtonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* XibButtonReader.swift */; };
-		OBJ_89 /* XibCustomObjectReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* XibCustomObjectReader.swift */; };
-		OBJ_90 /* XibDefinitionReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* XibDefinitionReader.swift */; };
-		OBJ_91 /* XibElementReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* XibElementReader.swift */; };
-		OBJ_92 /* XibMenuReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* XibMenuReader.swift */; };
-		OBJ_93 /* XibRectReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* XibRectReader.swift */; };
-		OBJ_94 /* XibViewReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* XibViewReader.swift */; };
-		OBJ_95 /* XibWindowReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* XibWindowReader.swift */; };
-		OBJ_97 /* LibXml2Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* LibXml2Swift.framework */; };
+		OBJ_78 /* GeneratorStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* GeneratorStream.swift */; };
+		OBJ_79 /* GeneratorTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* GeneratorTools.swift */; };
+		OBJ_80 /* RectGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* RectGenerator.swift */; };
+		OBJ_81 /* UiButtonGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* UiButtonGenerator.swift */; };
+		OBJ_82 /* UiDefinitionFileGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* UiDefinitionFileGenerator.swift */; };
+		OBJ_84 /* UiViewGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* UiViewGenerator.swift */; };
+		OBJ_85 /* UiViewGeneratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* UiViewGeneratorProtocol.swift */; };
+		OBJ_86 /* UiWindowGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* UiWindowGenerator.swift */; };
+		OBJ_89 /* XibButtonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* XibButtonReader.swift */; };
+		OBJ_90 /* XibCustomObjectReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* XibCustomObjectReader.swift */; };
+		OBJ_91 /* XibDefinitionReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* XibDefinitionReader.swift */; };
+		OBJ_92 /* XibElementReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* XibElementReader.swift */; };
+		OBJ_93 /* XibMenuReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* XibMenuReader.swift */; };
+		OBJ_94 /* XibRectReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* XibRectReader.swift */; };
+		OBJ_95 /* XibViewReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* XibViewReader.swift */; };
+		OBJ_96 /* XibWindowReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* XibWindowReader.swift */; };
+		OBJ_98 /* LibXml2Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* LibXml2Swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		371435681DCBD7B5008053E2 /* PBXContainerItemProxy */ = {
+		3758679F1DCD15710016AE0A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -55,13 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		371435691DCBDB57008053E2 /* UiDefinitionFileGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiDefinitionFileGenerator.swift; sourceTree = "<group>"; };
-		3714356D1DCBDE6D008053E2 /* GeneratorStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratorStream.swift; sourceTree = "<group>"; };
-		3714356F1DCBE5C5008053E2 /* UiViewGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiViewGenerator.swift; sourceTree = "<group>"; };
-		371435711DCBEE95008053E2 /* UiViewGeneratorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiViewGeneratorProtocol.swift; sourceTree = "<group>"; };
-		371435731DCBEF26008053E2 /* UiButtonGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiButtonGenerator.swift; sourceTree = "<group>"; };
-		371435751DCBEF37008053E2 /* UiWindowGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiWindowGenerator.swift; sourceTree = "<group>"; };
-		371435771DCBF511008053E2 /* GeneratorTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratorTools.swift; sourceTree = "<group>"; };
+		375867A01DCD4B380016AE0A /* VNameGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNameGenerator.swift; sourceTree = "<group>"; };
+		375867A21DCD54210016AE0A /* UiGeneratorSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiGeneratorSelector.swift; sourceTree = "<group>"; };
 		OBJ_10 /* XmlDomDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlDomDocument.swift; sourceTree = "<group>"; };
 		OBJ_11 /* XmlDomElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlDomElement.swift; sourceTree = "<group>"; };
 		OBJ_12 /* XmlDomNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlDomNode.swift; sourceTree = "<group>"; };
@@ -75,11 +68,14 @@
 		OBJ_22 /* UiDefinitionRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiDefinitionRegister.swift; sourceTree = "<group>"; };
 		OBJ_23 /* UiViewDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewDefinition.swift; sourceTree = "<group>"; };
 		OBJ_24 /* UiWindowDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiWindowDefinition.swift; sourceTree = "<group>"; };
-		OBJ_33 /* CustomObjectGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomObjectGenerator.swift; path = Generator/CustomObjectGenerator.swift; sourceTree = "<group>"; };
-		OBJ_34 /* RectGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectGenerator.swift; sourceTree = "<group>"; };
-		OBJ_35 /* UIDefinitionWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIDefinitionWriter.swift; path = Generator/UIDefinitionWriter.swift; sourceTree = "<group>"; };
-		OBJ_36 /* ViewGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewGenerator.swift; path = Generator/ViewGenerator.swift; sourceTree = "<group>"; };
-		OBJ_37 /* WindowGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WindowGenerator.swift; path = Generator/WindowGenerator.swift; sourceTree = "<group>"; };
+		OBJ_27 /* GeneratorStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorStream.swift; sourceTree = "<group>"; };
+		OBJ_28 /* GeneratorTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorTools.swift; sourceTree = "<group>"; };
+		OBJ_29 /* RectGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectGenerator.swift; sourceTree = "<group>"; };
+		OBJ_30 /* UiButtonGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiButtonGenerator.swift; sourceTree = "<group>"; };
+		OBJ_31 /* UiDefinitionFileGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiDefinitionFileGenerator.swift; sourceTree = "<group>"; };
+		OBJ_33 /* UiViewGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewGenerator.swift; sourceTree = "<group>"; };
+		OBJ_34 /* UiViewGeneratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewGeneratorProtocol.swift; sourceTree = "<group>"; };
+		OBJ_35 /* UiWindowGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiWindowGenerator.swift; sourceTree = "<group>"; };
 		OBJ_39 /* XibButtonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibButtonReader.swift; sourceTree = "<group>"; };
 		OBJ_40 /* XibCustomObjectReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibCustomObjectReader.swift; sourceTree = "<group>"; };
 		OBJ_41 /* XibDefinitionReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibDefinitionReader.swift; sourceTree = "<group>"; };
@@ -103,35 +99,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_96 /* Frameworks */ = {
+		OBJ_97 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_97 /* LibXml2Swift.framework in Frameworks */,
+				OBJ_98 /* LibXml2Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3714356B1DCBDB80008053E2 /* old */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_33 /* CustomObjectGenerator.swift */,
-				OBJ_35 /* UIDefinitionWriter.swift */,
-				OBJ_36 /* ViewGenerator.swift */,
-				OBJ_37 /* WindowGenerator.swift */,
-			);
-			name = old;
-			sourceTree = "<group>";
-		};
 		OBJ_15 /* Coconut-xib-converter */ = {
 			isa = PBXGroup;
 			children = (
-				3714356B1DCBDB80008053E2 /* old */,
 				OBJ_16 /* main.swift */,
 				OBJ_17 /* Definition */,
-				OBJ_32 /* Generator */,
+				OBJ_25 /* Generator */,
 				OBJ_38 /* Reader */,
 			);
 			name = "Coconut-xib-converter";
@@ -152,17 +136,18 @@
 			path = Definition;
 			sourceTree = "<group>";
 		};
-		OBJ_32 /* Generator */ = {
+		OBJ_25 /* Generator */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_34 /* RectGenerator.swift */,
-				371435691DCBDB57008053E2 /* UiDefinitionFileGenerator.swift */,
-				3714356D1DCBDE6D008053E2 /* GeneratorStream.swift */,
-				3714356F1DCBE5C5008053E2 /* UiViewGenerator.swift */,
-				371435711DCBEE95008053E2 /* UiViewGeneratorProtocol.swift */,
-				371435731DCBEF26008053E2 /* UiButtonGenerator.swift */,
-				371435751DCBEF37008053E2 /* UiWindowGenerator.swift */,
-				371435771DCBF511008053E2 /* GeneratorTools.swift */,
+				OBJ_27 /* GeneratorStream.swift */,
+				OBJ_28 /* GeneratorTools.swift */,
+				OBJ_29 /* RectGenerator.swift */,
+				OBJ_30 /* UiButtonGenerator.swift */,
+				OBJ_31 /* UiDefinitionFileGenerator.swift */,
+				OBJ_33 /* UiViewGenerator.swift */,
+				OBJ_34 /* UiViewGeneratorProtocol.swift */,
+				OBJ_35 /* UiWindowGenerator.swift */,
+				375867A21DCD54210016AE0A /* UiGeneratorSelector.swift */,
 			);
 			path = Generator;
 			sourceTree = "<group>";
@@ -178,6 +163,7 @@
 				OBJ_44 /* XibRectReader.swift */,
 				OBJ_45 /* XibViewReader.swift */,
 				OBJ_46 /* XibWindowReader.swift */,
+				375867A01DCD4B380016AE0A /* VNameGenerator.swift */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -257,12 +243,12 @@
 			buildConfigurationList = OBJ_65 /* Build configuration list for PBXNativeTarget "Coconut-xib-converter" */;
 			buildPhases = (
 				OBJ_68 /* Sources */,
-				OBJ_96 /* Frameworks */,
+				OBJ_97 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_98 /* PBXTargetDependency */,
+				OBJ_99 /* PBXTargetDependency */,
 			);
 			name = "Coconut-xib-converter";
 			productName = Coconut_xib_converter;
@@ -314,43 +300,41 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_69 /* main.swift in Sources */,
-				3714356E1DCBDE6D008053E2 /* GeneratorStream.swift in Sources */,
 				OBJ_70 /* CustomObjectDefinition.swift in Sources */,
 				OBJ_71 /* UiButtonDefinition.swift in Sources */,
 				OBJ_72 /* UiDefinitionFile.swift in Sources */,
-				3714356C1DCBDC95008053E2 /* UiDefinitionFileGenerator.swift in Sources */,
 				OBJ_73 /* UiDefinitionObject.swift in Sources */,
-				371435781DCBF511008053E2 /* GeneratorTools.swift in Sources */,
-				371435741DCBEF26008053E2 /* UiButtonGenerator.swift in Sources */,
 				OBJ_74 /* UiDefinitionRegister.swift in Sources */,
 				OBJ_75 /* UiViewDefinition.swift in Sources */,
 				OBJ_76 /* UiWindowDefinition.swift in Sources */,
-				OBJ_83 /* CustomObjectGenerator.swift in Sources */,
-				371435721DCBEE95008053E2 /* UiViewGeneratorProtocol.swift in Sources */,
-				371435761DCBEF37008053E2 /* UiWindowGenerator.swift in Sources */,
-				OBJ_84 /* RectGenerator.swift in Sources */,
-				OBJ_85 /* UIDefinitionWriter.swift in Sources */,
-				OBJ_86 /* ViewGenerator.swift in Sources */,
-				OBJ_87 /* WindowGenerator.swift in Sources */,
-				OBJ_88 /* XibButtonReader.swift in Sources */,
-				371435701DCBE5C5008053E2 /* UiViewGenerator.swift in Sources */,
-				OBJ_89 /* XibCustomObjectReader.swift in Sources */,
-				OBJ_90 /* XibDefinitionReader.swift in Sources */,
-				OBJ_91 /* XibElementReader.swift in Sources */,
-				OBJ_92 /* XibMenuReader.swift in Sources */,
-				OBJ_93 /* XibRectReader.swift in Sources */,
-				OBJ_94 /* XibViewReader.swift in Sources */,
-				OBJ_95 /* XibWindowReader.swift in Sources */,
+				OBJ_78 /* GeneratorStream.swift in Sources */,
+				OBJ_79 /* GeneratorTools.swift in Sources */,
+				OBJ_80 /* RectGenerator.swift in Sources */,
+				OBJ_81 /* UiButtonGenerator.swift in Sources */,
+				375867A31DCD54210016AE0A /* UiGeneratorSelector.swift in Sources */,
+				OBJ_82 /* UiDefinitionFileGenerator.swift in Sources */,
+				OBJ_84 /* UiViewGenerator.swift in Sources */,
+				375867A11DCD4B380016AE0A /* VNameGenerator.swift in Sources */,
+				OBJ_85 /* UiViewGeneratorProtocol.swift in Sources */,
+				OBJ_86 /* UiWindowGenerator.swift in Sources */,
+				OBJ_89 /* XibButtonReader.swift in Sources */,
+				OBJ_90 /* XibCustomObjectReader.swift in Sources */,
+				OBJ_91 /* XibDefinitionReader.swift in Sources */,
+				OBJ_92 /* XibElementReader.swift in Sources */,
+				OBJ_93 /* XibMenuReader.swift in Sources */,
+				OBJ_94 /* XibRectReader.swift in Sources */,
+				OBJ_95 /* XibViewReader.swift in Sources */,
+				OBJ_96 /* XibWindowReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_98 /* PBXTargetDependency */ = {
+		OBJ_99 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = OBJ_52 /* LibXml2Swift */;
-			targetProxy = 371435681DCBD7B5008053E2 /* PBXContainerItemProxy */;
+			targetProxy = 3758679F1DCD15710016AE0A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -401,10 +385,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-L/usr/lib",
+					"-L/usr/local/Cellar/libxml2/2.9.4/lib",
 					"-lxml2",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/include/libxml2";
+				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/local/Cellar/libxml2/2.9.4/include/libxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = LibXml2Swift;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -425,10 +409,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-L/usr/lib",
+					"-L/usr/local/Cellar/libxml2/2.9.4/lib",
 					"-lxml2",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/include/libxml2";
+				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/local/Cellar/libxml2/2.9.4/include/libxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = LibXml2Swift;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -448,10 +432,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-L/usr/lib",
+					"-L/usr/local/Cellar/libxml2/2.9.4/lib",
 					"-lxml2",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/include/libxml2";
+				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/local/Cellar/libxml2/2.9.4/include/libxml2";
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
@@ -470,10 +454,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-L/usr/lib",
+					"-L/usr/local/Cellar/libxml2/2.9.4/lib",
 					"-lxml2",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/include/libxml2";
+				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/local/Cellar/libxml2/2.9.4/include/libxml2";
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;

@@ -8,27 +8,37 @@
 
 import Foundation
 
-class UiButtonGenerator : UiViewGeneratorProtocol {
+class UiButtonGenerator : UiGenerator {
     
-    func createName(uiViewDefinition: UiViewDefinition) -> String {
-        if (uiViewDefinition.index == nil) {
-            return "button"
-        } else {
-            return "button\(uiViewDefinition.index!)"
+    func convert(definition: UiDefinitionObject) throws -> UiButtonDefinition {
+        if let window = definition as? UiButtonDefinition {
+            return window
         }
+        
+        throw GeneratorError.unknown(msg: "Unable to cast")
     }
     
-    func generateAttributeDefinition(uiViewDefinition: UiViewDefinition, output stream: GeneratorStream) {
-        stream.writeLine("  public var \(createName(uiViewDefinition: uiViewDefinition)): Button")
+    func generateAttributeDefinition(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
+        stream.writeLine("  public var \(definition.vName): Button")
     }
     
-    func generateAttribute(uiViewDefinition: UiViewDefinition, output stream: GeneratorStream){
-        let name = createName(uiViewDefinition: uiViewDefinition)
-        stream.writeLine("      self.\(name) = Button()")
+    func generateAttribute(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
+        stream.write("      self.\(definition.vName)")
+        try generateButton(definition: definition, output: stream)
     }
     
-    func generateVariable(uiViewDefinition: UiViewDefinition, output stream: GeneratorStream){
-        let name = createName(uiViewDefinition: uiViewDefinition)
-        stream.writeLine("      var \(name) = Button()")
+    func generateVariable(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
+        stream.write("      var \(definition.vName)")
+        try generateButton(definition: definition, output: stream)
+    }
+    
+    func generateButton(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
+        let uiButtonDefinition = try convert(definition: definition)
+        stream.writeLine(" = Button(title: \"\(uiButtonDefinition.id)\", action: EmptyAction())")
+    }
+    
+    func generateInstanciate(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
+        
+        
     }
 }

@@ -45,9 +45,6 @@ do {
     // Set ui definition
     let uiDefinition = try XibDefinitionReader.read(at: url)
     
-    // Create writer
-    let uiDefinitionWriter = UIDefinitionWriter(uiDefinition: uiDefinition)
-    
     // Generate files
     try UiDefinitionFileGenerator().generate(uiDefinitionFile: uiDefinition, at: URL(fileURLWithPath: output))
         

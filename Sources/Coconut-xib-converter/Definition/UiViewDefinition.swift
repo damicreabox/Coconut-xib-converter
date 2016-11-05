@@ -10,13 +10,11 @@ import Foundation
 
 enum UiViewType {
     case view
-    case window
     case button
 }
 
 class UiViewDefinition: UiDefinitionObject {
     
-    var index: Int?
     var views : [UiViewDefinition]
     
     var viewType: UiViewType {
@@ -25,9 +23,8 @@ class UiViewDefinition: UiDefinitionObject {
         }
     }
     
-    init(id: String, index: Int? = nil, subViews: [UiViewDefinition] = [UiViewDefinition](), customClass: String) {
+    init(id: String, uiDefinitionType: UiDefinitionType = .view, vName: String, subViews: [UiViewDefinition] = [UiViewDefinition](), customClass: String) {
         self.views = subViews
-        self.index = index
-        super.init(id: id, customClass: customClass)
+        super.init(id: id, uiDefinitionType: uiDefinitionType, vName: vName, customClass: customClass)
     }
 }

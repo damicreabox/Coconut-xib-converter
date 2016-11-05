@@ -49,7 +49,7 @@ class XibDefinitionReader {
                     
                     break
                 case "window":
-                    definition.views.append(XibWindowReader().read(element: child))
+                    definition.window.append(XibWindowReader().read(element: child))
                     break
                 case "customView":
                     definition.views.append(XibViewReader().read(element: child))

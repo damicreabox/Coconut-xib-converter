@@ -15,4 +15,5 @@ class UiDefinitionFile {
     var owner: CustomObjectDefinition? = nil
     var customObjects = [CustomObjectDefinition]()
     var views = [UiViewDefinition]()
+    var window = [UiWindowDefinition]()
 }

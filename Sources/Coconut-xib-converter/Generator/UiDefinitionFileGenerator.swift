@@ -19,7 +19,7 @@ class UiDefinitionFileGenerator {
         let xibFile = url.appendingPathComponent("\(uiFile).swift")
         
         guard let stream = OutputStream(toFileAtPath: xibFile.path, append: false) else {
-            throw ConverterError.unknowError(msg: "Unable to open directory \(url.path)")
+            throw GeneratorError.unknown(msg: "Unable to open directory \(url.path)")
         }
         
         // Create file
@@ -37,8 +37,6 @@ class UiDefinitionFileGenerator {
     
     func generate(uiDefinitionFile: UiDefinitionFile, to stream: GeneratorStream) throws {
         
-        let uiViewGenerator = UiViewGenerator()
-        
         stream.writeLine("import Foundation")
         stream.writeLine("import Coconut")
         
@@ -52,9 +50,14 @@ class UiDefinitionFileGenerator {
         stream.writeLine("  public var owner: NSObject? = nil")
         stream.writeEmptyLine()
         
+        // Write windows
+        for windowDefinition in uiDefinitionFile.window {
+            try UiGeneratorSelector.instance.findGenerator(definition: windowDefinition).generateAttributeDefinition(definition: windowDefinition, output: stream)
+        }
+        
         // Write views
         for viewDefinition in uiDefinitionFile.views {
-            try uiViewGenerator.generateAttributeDefinition(uiViewDefinition: viewDefinition, output: stream)
+            try UiGeneratorSelector.instance.findGenerator(definition: viewDefinition).generateAttributeDefinition(definition: viewDefinition, output: stream)
         }
         
         stream.writeLine("  ")
@@ -64,9 +67,15 @@ class UiDefinitionFileGenerator {
         stream.writeLine("      self.firstResponder = application")
         
         // Write views
+        for windowDefinition in uiDefinitionFile.window {
+            stream.writeEmptyLine()
+            try UiGeneratorSelector.instance.findGenerator(definition: windowDefinition).generateAttribute(definition: windowDefinition, output: stream)
+        }
+        
+        // Write views
         for viewDefinition in uiDefinitionFile.views {
             stream.writeEmptyLine()
-            try uiViewGenerator.generateAttribute(uiViewDefinition: viewDefinition, output: stream)
+            try UiGeneratorSelector.instance.findGenerator(definition: viewDefinition).generateAttribute(definition: viewDefinition, output: stream)
         }
         
         stream.writeLine("  }")
@@ -82,6 +91,18 @@ class UiDefinitionFileGenerator {
             stream.writeLine("      } else {")
             stream.writeLine("          NSLog(\"\\\"owner\\\" not an \\\"\(owner.customClass)\\\"\")")
             stream.writeLine("      }")
+        }
+        
+        // Write windows
+        for windowDefinition in uiDefinitionFile.window {
+            stream.writeEmptyLine()
+            try UiGeneratorSelector.instance.findGenerator(definition: windowDefinition).generateInstanciate(definition: windowDefinition, output: stream)
+        }
+        
+        // Write views
+        for viewDefinition in uiDefinitionFile.views {
+            stream.writeEmptyLine()
+            try UiGeneratorSelector.instance.findGenerator(definition: viewDefinition).generateInstanciate(definition: viewDefinition, output: stream)
         }
         
         stream.writeLine("      return true")

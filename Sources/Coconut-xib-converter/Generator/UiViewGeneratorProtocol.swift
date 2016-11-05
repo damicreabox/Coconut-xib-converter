@@ -12,4 +12,5 @@ protocol UiViewGeneratorProtocol {
     func generateAttributeDefinition(uiViewDefinition: UiViewDefinition, output stream: GeneratorStream) throws
     func generateAttribute(uiViewDefinition: UiViewDefinition, output stream: GeneratorStream) throws
     func generateVariable(uiViewDefinition: UiViewDefinition, output stream: GeneratorStream) throws
+    func generateInstanciate(uiViewDefinition: UiViewDefinition, output stream: GeneratorStream) throws
 }

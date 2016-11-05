@@ -8,13 +8,27 @@
 
 import Foundation
 
+enum UiDefinitionType {
+    case window
+    case view
+    case button
+    case customObject
+    case unknown
+}
+
 class UiDefinitionObject {
     
     let id: String
+    
+    let uiDefinitionType : UiDefinitionType
+    let vName: String
     let customClass: String
     
-    init(id: String, customClass: String) {
+    
+    init(id: String, uiDefinitionType : UiDefinitionType, vName: String, customClass: String) {
         self.id = id
+        self.uiDefinitionType = uiDefinitionType
+        self.vName = vName
         self.customClass = customClass
     }
 }

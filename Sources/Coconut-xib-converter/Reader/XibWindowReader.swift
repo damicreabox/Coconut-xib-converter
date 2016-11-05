@@ -28,9 +28,10 @@ class XibWindowReader : XibElementReader {
         let contentRect = rects["contentRect"]
         
         return UiWindowDefinition(id: readId(element: element),
-                         view: view,
-                         contentRect: contentRect == nil ? NSRect() : contentRect!,
-                         customClass: readCustomClass(element: element, defaultValue: "Window"),
-                         title: readText(element: element, attr: "title"))
+                                  vName:  VNameGenerator.instance.createWindowVName(),
+                                  view: view,
+                                  contentRect: contentRect == nil ? NSRect() : contentRect!,
+                                  customClass: readCustomClass(element: element, defaultValue: "Window"),
+                                  title: readText(element: element, attr: "title"))
     }
 }
