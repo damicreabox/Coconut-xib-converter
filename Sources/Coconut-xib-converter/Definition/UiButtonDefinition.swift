@@ -10,6 +10,9 @@ import Foundation
 
 class UiButtonDefinition : UiViewDefinition {
     
+    var title : String
+    var action : UiActionDefinition? = nil
+    
     override var viewType: UiViewType {
         get {
             return UiViewType.button
@@ -17,6 +20,7 @@ class UiButtonDefinition : UiViewDefinition {
     }
     
     init(id: String, vName: String, customClass: String = "Button") {
+        self.title = id
         super.init(id: id, uiDefinitionType: .button, vName: vName, customClass: customClass)
     }
 }

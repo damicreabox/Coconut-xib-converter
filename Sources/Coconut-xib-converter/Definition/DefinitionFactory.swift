@@ -16,14 +16,14 @@ class DefinitionFactory {
         
     }
     
-    var elements = Dictionary<String, UiDefinitionObject>()
+    var elements = Dictionary<String, UiDefinition>()
     
     private var windowCount = -1
     private var viewCount = -1
     private var buttonCount = -1
     private var objectCount = -1
     
-    private func registerDefinition<T: UiDefinitionObject>(definition: T) -> T {
+    private func registerDefinition<T: UiDefinition>(definition: T) -> T {
         elements[definition.vName] = definition
         return definition
     }
@@ -49,6 +49,12 @@ class DefinitionFactory {
     func customObject(id: String) -> CustomObjectDefinition {
         objectCount = objectCount + 1
         let definition = CustomObjectDefinition(id: id, vName: "cutomObject\(objectCount)")
+        return registerDefinition(definition: definition)
+    }
+    
+    func action(id: String) -> UiActionDefinition {
+        objectCount = objectCount + 1
+        let definition = UiActionDefinition(id: id, vName: "cutomObject\(objectCount)")
         return registerDefinition(definition: definition)
     }
 }

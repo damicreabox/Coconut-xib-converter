@@ -23,18 +23,27 @@ class UiButtonGenerator : UiGenerator {
     }
     
     func generateAttribute(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-        stream.write("      self.\(definition.vName)")
-        try generateButton(definition: definition, output: stream)
+        try generateButton(prefix: "self.", definition: definition, output: stream)
     }
     
     func generateVariable(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
-        stream.write("      var \(definition.vName)")
-        try generateButton(definition: definition, output: stream)
+        try generateButton(prefix: "let ", definition: definition, output: stream)
     }
     
-    func generateButton(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
+    func generateButton(prefix: String, definition: UiDefinitionObject, output stream: GeneratorStream) throws {
         let uiButtonDefinition = try convert(definition: definition)
-        stream.writeLine(" = Button(title: \"\(uiButtonDefinition.id)\", action: EmptyAction())")
+        
+        if let actionDefinition = uiButtonDefinition.action {
+            stream.writeLine("      let \(actionDefinition.vName) = EmptyAction()")
+        }
+        
+        stream.write("      \(prefix)\(definition.vName) = Button(title: \"\(uiButtonDefinition.title)\"")
+        
+        if let actionDefinition = uiButtonDefinition.action {
+            stream.write(", action: \(actionDefinition.vName)")
+        }
+        
+        stream.writeLine(")")
     }
     
     func generateInstanciate(definition: UiDefinitionObject, output stream: GeneratorStream) throws {

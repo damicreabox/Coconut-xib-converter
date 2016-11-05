@@ -16,19 +16,27 @@ enum UiDefinitionType {
     case unknown
 }
 
-class UiDefinitionObject {
+class UiDefinition {
     
     let id: String
+    let vName: String
+    
+    init(id: String, vName: String) {
+        self.id = id
+        self.vName = vName
+    }
+}
+
+class UiDefinitionObject :UiDefinition {
+    
     
     let uiDefinitionType : UiDefinitionType
-    let vName: String
     var customClass: String
     
     
     init(id: String, uiDefinitionType : UiDefinitionType, vName: String, customClass: String) {
-        self.id = id
         self.uiDefinitionType = uiDefinitionType
-        self.vName = vName
         self.customClass = customClass
+        super.init(id: id, vName: vName)
     }
 }

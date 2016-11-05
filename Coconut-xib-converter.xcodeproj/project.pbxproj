@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		37175F741DCDF43700112907 /* DefinitionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175F731DCDF43700112907 /* DefinitionFactory.swift */; };
+		37175F761DCE125D00112907 /* XibActionReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175F751DCE125D00112907 /* XibActionReader.swift */; };
+		37175F781DCE12B500112907 /* UiActionDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175F771DCE12B500112907 /* UiActionDefinition.swift */; };
+		37175F7A1DCE157B00112907 /* UiActionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175F791DCE157B00112907 /* UiActionGenerator.swift */; };
 		375867A31DCD54210016AE0A /* UiGeneratorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375867A21DCD54210016AE0A /* UiGeneratorSelector.swift */; };
 		OBJ_57 /* XmlDomAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* XmlDomAttribute.swift */; };
 		OBJ_58 /* XmlDomDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* XmlDomDocument.swift */; };
@@ -54,6 +57,9 @@
 
 /* Begin PBXFileReference section */
 		37175F731DCDF43700112907 /* DefinitionFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinitionFactory.swift; sourceTree = "<group>"; };
+		37175F751DCE125D00112907 /* XibActionReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibActionReader.swift; sourceTree = "<group>"; };
+		37175F771DCE12B500112907 /* UiActionDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiActionDefinition.swift; sourceTree = "<group>"; };
+		37175F791DCE157B00112907 /* UiActionGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiActionGenerator.swift; sourceTree = "<group>"; };
 		375867A21DCD54210016AE0A /* UiGeneratorSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiGeneratorSelector.swift; sourceTree = "<group>"; };
 		OBJ_10 /* XmlDomDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlDomDocument.swift; sourceTree = "<group>"; };
 		OBJ_11 /* XmlDomElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlDomElement.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 				OBJ_23 /* UiViewDefinition.swift */,
 				OBJ_24 /* UiWindowDefinition.swift */,
 				37175F731DCDF43700112907 /* DefinitionFactory.swift */,
+				37175F771DCE12B500112907 /* UiActionDefinition.swift */,
 			);
 			path = Definition;
 			sourceTree = "<group>";
@@ -149,6 +156,7 @@
 				OBJ_34 /* UiViewGeneratorProtocol.swift */,
 				OBJ_35 /* UiWindowGenerator.swift */,
 				375867A21DCD54210016AE0A /* UiGeneratorSelector.swift */,
+				37175F791DCE157B00112907 /* UiActionGenerator.swift */,
 			);
 			path = Generator;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 				OBJ_44 /* XibRectReader.swift */,
 				OBJ_45 /* XibViewReader.swift */,
 				OBJ_46 /* XibWindowReader.swift */,
+				37175F751DCE125D00112907 /* XibActionReader.swift */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -300,7 +309,9 @@
 			files = (
 				OBJ_69 /* main.swift in Sources */,
 				OBJ_70 /* CustomObjectDefinition.swift in Sources */,
+				37175F761DCE125D00112907 /* XibActionReader.swift in Sources */,
 				OBJ_71 /* UiButtonDefinition.swift in Sources */,
+				37175F781DCE12B500112907 /* UiActionDefinition.swift in Sources */,
 				OBJ_72 /* UiDefinitionFile.swift in Sources */,
 				OBJ_73 /* UiDefinitionObject.swift in Sources */,
 				OBJ_74 /* UiDefinitionRegister.swift in Sources */,
@@ -317,6 +328,7 @@
 				OBJ_85 /* UiViewGeneratorProtocol.swift in Sources */,
 				OBJ_86 /* UiWindowGenerator.swift in Sources */,
 				OBJ_89 /* XibButtonReader.swift in Sources */,
+				37175F7A1DCE157B00112907 /* UiActionGenerator.swift in Sources */,
 				OBJ_90 /* XibCustomObjectReader.swift in Sources */,
 				OBJ_91 /* XibDefinitionReader.swift in Sources */,
 				OBJ_92 /* XibElementReader.swift in Sources */,

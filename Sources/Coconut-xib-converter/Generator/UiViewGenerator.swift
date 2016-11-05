@@ -31,7 +31,7 @@ class UiViewGenerator : UiGenerator {
     
     func generateVariable(definition: UiDefinitionObject, output stream: GeneratorStream) throws {
         let name = definition.vName
-        stream.write("      var \(name)")
+        stream.write("      let \(name)")
         try generateView(definition: definition, output: stream)
     }
     
