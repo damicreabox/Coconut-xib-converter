@@ -15,4 +15,8 @@ class UiButtonDefinition : UiViewDefinition {
             return UiViewType.button
         }
     }
+    
+    init(id: String, vName: String, customClass: String = "Button") {
+        super.init(id: id, uiDefinitionType: .button, vName: vName, customClass: customClass)
+    }
 }

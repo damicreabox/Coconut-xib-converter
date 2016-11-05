@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		375867A11DCD4B380016AE0A /* VNameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375867A01DCD4B380016AE0A /* VNameGenerator.swift */; };
+		37175F741DCDF43700112907 /* DefinitionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175F731DCDF43700112907 /* DefinitionFactory.swift */; };
 		375867A31DCD54210016AE0A /* UiGeneratorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375867A21DCD54210016AE0A /* UiGeneratorSelector.swift */; };
 		OBJ_57 /* XmlDomAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* XmlDomAttribute.swift */; };
 		OBJ_58 /* XmlDomDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* XmlDomDocument.swift */; };
@@ -53,7 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		375867A01DCD4B380016AE0A /* VNameGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNameGenerator.swift; sourceTree = "<group>"; };
+		37175F731DCDF43700112907 /* DefinitionFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinitionFactory.swift; sourceTree = "<group>"; };
 		375867A21DCD54210016AE0A /* UiGeneratorSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiGeneratorSelector.swift; sourceTree = "<group>"; };
 		OBJ_10 /* XmlDomDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlDomDocument.swift; sourceTree = "<group>"; };
 		OBJ_11 /* XmlDomElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlDomElement.swift; sourceTree = "<group>"; };
@@ -132,6 +132,7 @@
 				OBJ_22 /* UiDefinitionRegister.swift */,
 				OBJ_23 /* UiViewDefinition.swift */,
 				OBJ_24 /* UiWindowDefinition.swift */,
+				37175F731DCDF43700112907 /* DefinitionFactory.swift */,
 			);
 			path = Definition;
 			sourceTree = "<group>";
@@ -163,7 +164,6 @@
 				OBJ_44 /* XibRectReader.swift */,
 				OBJ_45 /* XibViewReader.swift */,
 				OBJ_46 /* XibWindowReader.swift */,
-				375867A01DCD4B380016AE0A /* VNameGenerator.swift */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -184,7 +184,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -193,7 +193,6 @@
 				OBJ_48 /* Files */,
 				OBJ_49 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -270,7 +269,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_49 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -309,12 +308,12 @@
 				OBJ_76 /* UiWindowDefinition.swift in Sources */,
 				OBJ_78 /* GeneratorStream.swift in Sources */,
 				OBJ_79 /* GeneratorTools.swift in Sources */,
+				37175F741DCDF43700112907 /* DefinitionFactory.swift in Sources */,
 				OBJ_80 /* RectGenerator.swift in Sources */,
 				OBJ_81 /* UiButtonGenerator.swift in Sources */,
 				375867A31DCD54210016AE0A /* UiGeneratorSelector.swift in Sources */,
 				OBJ_82 /* UiDefinitionFileGenerator.swift in Sources */,
 				OBJ_84 /* UiViewGenerator.swift in Sources */,
-				375867A11DCD4B380016AE0A /* VNameGenerator.swift in Sources */,
 				OBJ_85 /* UiViewGeneratorProtocol.swift in Sources */,
 				OBJ_86 /* UiWindowGenerator.swift in Sources */,
 				OBJ_89 /* XibButtonReader.swift in Sources */,

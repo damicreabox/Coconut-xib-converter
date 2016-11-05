@@ -33,11 +33,16 @@ class XibCustomObjectReader : XibElementReader {
             break
         }
         
+        // Custom object
+        let customObject = DefinitionFactory.instance.customObject(id: id)
         
-        return CustomObjectDefinition(id: id,
-                                      vName: VNameGenerator.instance.createCustomObjectVName(),
-                                      name: name,
-                                      customClass: readCustomClass(element: element, defaultValue: "NSObject"))
+        // Set name
+        customObject.name = name
+        
+        // Read custom class
+        customObject.customClass = readCustomClass(element: element, defaultValue: "NSObject")
+        
+        return customObject
     }
     
 }

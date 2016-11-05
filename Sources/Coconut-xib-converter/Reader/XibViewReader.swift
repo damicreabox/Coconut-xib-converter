@@ -39,10 +39,13 @@ class XibViewReader : XibElementReader {
     
     func read(element: XmlDomElement) -> UiViewDefinition {
         print(" - View : \(element.name)")
-        let viewDefinitions = readSubViews(element: element)
-        return UiViewDefinition(id: readId(element: element),
-                                vName: VNameGenerator.instance.createViewVName(),
-                                subViews: viewDefinitions,
-                                customClass: readCustomClass(element: element, defaultValue: "View"))
+        
+        // Create view
+        let viewDefinition = DefinitionFactory.instance.view(id: readId(element: element))
+        
+        // Set view
+        viewDefinition.views = readSubViews(element: element)
+        
+        return viewDefinition
     }
 }

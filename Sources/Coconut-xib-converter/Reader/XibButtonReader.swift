@@ -14,6 +14,10 @@ class XibButtonReader : XibElementReader {
     
     func read(element: XmlDomElement) -> UiButtonDefinition {
         print(" - Button : \(element.name)")
-        return UiButtonDefinition(id: readId(element: element), uiDefinitionType: .button, vName: VNameGenerator.instance.createViewVName(type: "button"), customClass: "Button")
+        
+        // Set button
+        let buttonDefinition = DefinitionFactory.instance.button(id: readId(element: element))
+                
+        return buttonDefinition
     }
 }

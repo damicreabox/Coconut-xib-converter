@@ -27,11 +27,22 @@ class XibWindowReader : XibElementReader {
         // Find content rect
         let contentRect = rects["contentRect"]
         
-        return UiWindowDefinition(id: readId(element: element),
-                                  vName:  VNameGenerator.instance.createWindowVName(),
-                                  view: view,
-                                  contentRect: contentRect == nil ? NSRect() : contentRect!,
-                                  customClass: readCustomClass(element: element, defaultValue: "Window"),
-                                  title: readText(element: element, attr: "title"))
+        let windowDefinition = DefinitionFactory.instance.window(id: readId(element: element))
+        
+        // Set rectangle
+        if let contentRect = contentRect {
+            windowDefinition.contentRect = contentRect
+        }
+        
+        // Set view
+        windowDefinition.view = view
+        
+        // Custom clas
+        windowDefinition.customClass = readCustomClass(element: element, defaultValue: "Window")
+        
+        // Set title
+        windowDefinition.title = readText(element: element, attr: "title")
+        
+        return windowDefinition
     }
 }

@@ -15,7 +15,7 @@ enum UiViewType {
 
 class UiViewDefinition: UiDefinitionObject {
     
-    var views : [UiViewDefinition]
+    var views = [UiViewDefinition]()
     
     var viewType: UiViewType {
         get {
@@ -23,8 +23,7 @@ class UiViewDefinition: UiDefinitionObject {
         }
     }
     
-    init(id: String, uiDefinitionType: UiDefinitionType = .view, vName: String, subViews: [UiViewDefinition] = [UiViewDefinition](), customClass: String) {
-        self.views = subViews
+    override init(id: String, uiDefinitionType: UiDefinitionType = .view, vName: String, customClass: String = "View") {
         super.init(id: id, uiDefinitionType: uiDefinitionType, vName: vName, customClass: customClass)
     }
 }

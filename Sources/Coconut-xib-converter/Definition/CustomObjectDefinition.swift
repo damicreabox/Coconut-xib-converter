@@ -10,9 +10,9 @@ import Foundation
 
 class CustomObjectDefinition : UiDefinitionObject {
     
-    var name: String
-    init(id: String, vName: String, name: String, customClass: String) {
-        self.name = name
-        super.init(id: id, uiDefinitionType: .customObject, vName: vName, customClass: customClass)
+    var name: String = ""
+    
+    init(id: String, vName: String) {
+        super.init(id: id, uiDefinitionType: .customObject, vName: vName, customClass: "NSObject")
     }
 }

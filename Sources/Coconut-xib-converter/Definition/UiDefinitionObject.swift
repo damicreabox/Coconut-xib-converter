@@ -22,7 +22,7 @@ class UiDefinitionObject {
     
     let uiDefinitionType : UiDefinitionType
     let vName: String
-    let customClass: String
+    var customClass: String
     
     
     init(id: String, uiDefinitionType : UiDefinitionType, vName: String, customClass: String) {
