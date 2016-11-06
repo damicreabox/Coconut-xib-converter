@@ -27,10 +27,10 @@ func swiftId(id: String?) -> String {
 
 class XibDefinitionReader {
  
-    func read(element: XmlDomElement) -> UiDefinitionFile {
+    func read(element: XmlDomElement, name: String) -> UiDefinitionFile {
         
         // Create definiton
-        let definition = UiDefinitionFile()
+        let definition = UiDefinitionFile(name: name)
         
         for node in element.children {
             if let child = node as? XmlDomElement {
@@ -83,6 +83,6 @@ class XibDefinitionReader {
         }
         
         // Read all objects
-        return XibDefinitionReader().read(element: objectsElement)
+        return XibDefinitionReader().read(element: objectsElement, name: url.deletingPathExtension().lastPathComponent)
     }
 }
