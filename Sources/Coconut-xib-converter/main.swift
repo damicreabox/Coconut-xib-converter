@@ -40,6 +40,7 @@ guard let url = URL(string: file) else {
     exit(1)
 }
 
+let logger = Logger.getLogger(name: #file)
 do {
         
     // Set ui definition
@@ -49,5 +50,6 @@ do {
     try UiDefinitionFileGenerator().generate(uiDefinitionFile: uiDefinition, at: URL(fileURLWithPath: output))
         
 } catch {
-    print("\(error)")
+    logger.log(.SEVERE, error)
+    exit(1)
 }

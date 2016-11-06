@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UiActionGenerator : UiGenerator {
+class UiActionGenerator {
     
     func convert(definition: UiDefinition) throws -> UiActionDefinition {
         if let action = definition as? UiActionDefinition {
@@ -18,28 +18,22 @@ class UiActionGenerator : UiGenerator {
         throw GeneratorError.unknown(msg: "Unable to cast")
     }
     
-    func generateAttributeDefinition(definition: UiDefinition, output stream: GeneratorStream) throws {
-        
+    private func encodeSelector(definition: UiDefinition, selector: String) -> String {
+        return selector.replacingOccurrences(of: ":", with: "(\(definition.vName))")
     }
     
-    func generateAttribute(definition: UiDefinition, output stream: GeneratorStream) throws {
+    func generateVariable(caller: UiDefinition, action: UiActionDefinition, output stream: GeneratorStream) throws {
         
-    }
-    
-    private func encodeSelector(selector: String) -> String {
-        return selector.replacingOccurrences(of: ":", with: "(object)")
-    }
-    
-    func generateVariable(definition: UiDefinition, output stream: GeneratorStream) throws {
-        
-        let actionDefinition = try convert(definition: definition)
+        let actionDefinition = try convert(definition: action)
         
         if let targetDefinition = actionDefinition.target, let selector = actionDefinition.selector {
-            stream.writeLine("let \(definition.vName) = OjectAction<\(targetDefinition.customClass)>(object: \(targetDefinition.vName)!) { object in object.\(encodeSelector(selector: selector)) }")
+            
+            stream.write("let \(action.vName) = OjectAction<\(caller.customClass),\(targetDefinition.customClass)>(")
+            stream.write("caller: \(caller.vName),")
+            stream.write("target: \(targetDefinition.vName)!")
+            stream.write(") {")
+            stream.write("caller, target in target.\(encodeSelector(definition: caller, selector: selector))")
+            stream.writeLine("}")
         }
-    }
-    
-    func generateInstanciate(definition: UiDefinition, output stream: GeneratorStream) throws {
-        
     }
 }

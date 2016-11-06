@@ -90,7 +90,7 @@ class UiGeneratorSelector {
     private var generators = Dictionary<UiDefinitionType, UiGenerator>()
     
     private init() {
-        //generators[UiDefinitionType.customObject] = CustomObjectGenerator()
+        generators[UiDefinitionType.customObject] = UIObjectGenerator<CustomObjectDefinition>(delegate: CustomObjectGeneratorDelegate())
         generators[UiDefinitionType.window] = UIObjectGenerator<UiWindowDefinition>(delegate: UiWindowGeneratorDelegate())
         generators[UiDefinitionType.view] = UIObjectGenerator<UiViewDefinition>(delegate: UiViewGeneratorDelegate())
         generators[UiDefinitionType.button] = UIObjectGenerator<UiButtonDefinition>(delegate: UiButtonGeneratorDelegate())

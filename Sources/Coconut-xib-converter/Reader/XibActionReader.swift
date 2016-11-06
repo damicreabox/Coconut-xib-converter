@@ -11,7 +11,30 @@ import Foundation
 import LibXml2Swift
 
 class XibActionReader : XibElementReader {
- 
+    
+    static func log(logger: Logger, definition: UiActionDefinition) {
+        
+        // FXIME Add log parameter like ("{0} -> {1}, target?, selector?)
+        
+        var info = ""
+        
+        if let target = definition.target {
+            info.append(target.vName)
+        } else {
+            info.append("(nil)")
+        }
+        
+        info.append(" -> ")
+        
+        if let selector = definition.selector {
+            info.append(selector)
+        } else {
+            info.append("(nil)")
+        }
+        
+        logger.log(.INFO, " - Action \(info)")
+    }
+    
     func read(element: XmlDomElement) -> UiActionDefinition {
         
         // Create action

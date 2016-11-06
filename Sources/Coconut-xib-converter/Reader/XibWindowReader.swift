@@ -12,14 +12,9 @@ import LibXml2Swift
 
 class XibWindowReader : XibElementReader {
     
+    private static let LOGGER = Logger.getLogger(name: #file)
+    
     func read(element: XmlDomElement) -> UiWindowDefinition {
-        print(" - Window : \(element.name)")
-        let view: UiViewDefinition?
-        if let viewElement = element.child(name: "view") {
-            view = XibViewReader().read(element: viewElement)
-        } else {
-            view = nil
-        }
         
         // Read Frame
         let rects = XibRectReader().readRects(elements: element.children(name: "rect"))
@@ -29,19 +24,30 @@ class XibWindowReader : XibElementReader {
         
         let windowDefinition = DefinitionFactory.instance.window(id: readId(element: element))
         
+        // Custom clas
+        windowDefinition.customClass = readCustomClass(element: element, defaultValue: "Window")
+        
+        // Log creation
+        XibElementReader.logObject(logger: XibWindowReader.LOGGER, definition: windowDefinition)
+        
         // Set rectangle
         if let contentRect = contentRect {
             windowDefinition.contentRect = contentRect
         }
         
-        // Set view
-        windowDefinition.view = view
-        
-        // Custom clas
-        windowDefinition.customClass = readCustomClass(element: element, defaultValue: "Window")
         
         // Set title
         windowDefinition.title = readText(element: element, attr: "title")
+        
+        if let viewElement = element.child(name: "view") {
+            
+            //  Read view
+            let view = XibViewReader().read(element: viewElement)
+            
+            // Set view
+            windowDefinition.view = view
+            
+        }
         
         return windowDefinition
     }

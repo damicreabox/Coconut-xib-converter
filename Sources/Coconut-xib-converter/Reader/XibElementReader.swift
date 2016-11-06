@@ -12,6 +12,10 @@ import LibXml2Swift
 
 class XibElementReader {
     
+    static func logObject(logger: Logger, definition: UiDefinitionObject) {
+        logger.log(.INFO, "\(definition.uiDefinitionType) : \(definition.id) (\(definition.vName):\(definition.customClass))")
+    }
+    
     func convertIdToName(id: String) -> String {
         return id.replacingOccurrences(of: "-", with: "_")
     }

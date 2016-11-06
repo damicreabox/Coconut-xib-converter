@@ -10,22 +10,16 @@ import Foundation
 
 class UiButtonGeneratorDelegate : UIObjectGeneratorDelegate<UiButtonDefinition> {
     
-    
-    override func generateBefore(definition: UiButtonDefinition, output stream: GeneratorStream) throws {
-        
-        if let actionDefinition = definition.action {
-            try UiActionGenerator().generateVariable(definition: actionDefinition, output: stream)
-        }
+    override func generateInstanciation(definition: UiButtonDefinition, output stream: GeneratorStream) throws {
+        stream.write("Button(title: \"\(definition.title)\")")
     }
     
-    override func generateInstanciation(definition: UiButtonDefinition, output stream: GeneratorStream) throws {
-        
-        stream.write("Button(title: \"\(definition.title)\"")
+    
+    override func generateAfter(definition: UiButtonDefinition, output stream: GeneratorStream) throws {
         
         if let actionDefinition = definition.action {
-            stream.write(", action: \(actionDefinition.vName)")
+            try UiActionGenerator().generateVariable(caller: definition, action: actionDefinition, output: stream)
+            stream.writeLine("\(definition.vName).action = \(actionDefinition.vName)")
         }
-        
-        stream.write(")")
     }
 }

@@ -15,17 +15,9 @@ public enum XibReaderError : Error {
     case unknow(msg: String)
 }
 
-var idCounter = 0
-func swiftId(id: String?) -> String {
-    guard let id = id else {
-        let vId = "id\(idCounter)"
-        idCounter = idCounter + 1
-        return vId
-    }
-    return "id" + id.replacingOccurrences(of: "-", with: "_");
-}
-
 class XibDefinitionReader {
+    
+    private static let LOGGER = Logger.getLogger(name: #file)
  
     func read(element: XmlDomElement, name: String) -> UiDefinitionFile {
         

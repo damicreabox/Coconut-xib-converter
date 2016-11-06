@@ -66,6 +66,11 @@ class UiDefinitionFileGenerator {
         }
         stream.writeEmptyLine()
         
+        // Write custom objects
+        for customObject in uiDefinitionFile.customObjects {
+            try UiGeneratorSelector.instance.findGenerator(definition: customObject).generateAttributeDefinition(definition: customObject, output: stream)
+        }
+        
         // Write windows
         for windowDefinition in uiDefinitionFile.window {
             try UiGeneratorSelector.instance.findGenerator(definition: windowDefinition).generateAttributeDefinition(definition: windowDefinition, output: stream)
@@ -111,6 +116,12 @@ class UiDefinitionFileGenerator {
             stream.writeLine("} else {")
             stream.writeLine("    NSLog(\"\\\"\(owner.vName)\\\" not an \\\"\(owner.customClass)\\\"\")")
             stream.writeLine("}")
+        }
+        
+        // Write custom objects
+        for customObjectDefinition in uiDefinitionFile.customObjects {
+            stream.writeEmptyLine()
+            try UiGeneratorSelector.instance.findGenerator(definition: customObjectDefinition).generateAttribute(definition: customObjectDefinition, output: stream)
         }
         
         // Write views

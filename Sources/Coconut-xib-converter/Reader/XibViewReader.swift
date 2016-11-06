@@ -12,6 +12,8 @@ import LibXml2Swift
 
 class XibViewReader : XibElementReader {
     
+    private static let LOGGER = Logger.getLogger(name: #file)
+    
     func readSubViews(element: XmlDomElement) -> [UiViewDefinition] {
         
         var subViews = [UiViewDefinition]()
@@ -38,10 +40,12 @@ class XibViewReader : XibElementReader {
     }
     
     func read(element: XmlDomElement) -> UiViewDefinition {
-        print(" - View : \(element.name)")
         
         // Create view
         let viewDefinition = DefinitionFactory.instance.view(id: readId(element: element))
+        
+        // Log creation
+        XibElementReader.logObject(logger: XibViewReader.LOGGER, definition: viewDefinition)
         
         // Set view
         viewDefinition.views = readSubViews(element: element)
