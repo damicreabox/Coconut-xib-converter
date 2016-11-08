@@ -15,7 +15,11 @@ class UiViewGeneratorDelegate : UIObjectGeneratorDelegate<UiViewDefinition> {
     }
     
     override func generateInstanciation(definition: UiViewDefinition, output stream: GeneratorStream) throws {
-        stream.write("View()")
+        stream.write("View(frame: ")
+        if let frame = definition.frame {
+            stream.write(RectGenerator().newInstance(rect: frame))
+        }
+        stream.write(")")
     }
     
     override func generateAfter(definition: UiViewDefinition, output stream: GeneratorStream) throws {

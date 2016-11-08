@@ -44,6 +44,11 @@ class XibViewReader : XibElementReader {
         // Create view
         let viewDefinition = DefinitionFactory.instance.view(id: readId(element: element))
         
+        // Read size
+        if let rectElement = element.child(name: "rect") {
+            viewDefinition.frame = XibRectReader().readRect(node: rectElement).rect
+        }
+        
         // Log creation
         XibElementReader.logObject(logger: XibViewReader.LOGGER, definition: viewDefinition)
         

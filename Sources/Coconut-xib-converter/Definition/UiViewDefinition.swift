@@ -15,6 +15,7 @@ enum UiViewType {
 
 class UiViewDefinition: UiDefinitionObject {
     
+    var frame : NSRect? = nil
     var views = [UiViewDefinition]()
     
     var viewType: UiViewType {

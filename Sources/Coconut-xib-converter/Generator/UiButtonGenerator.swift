@@ -15,11 +15,20 @@ class UiButtonGeneratorDelegate : UIObjectGeneratorDelegate<UiButtonDefinition> 
     }
     
     override func generateInstanciation(definition: UiButtonDefinition, output stream: GeneratorStream) throws {
-        stream.write("Button(title: \"\(definition.title)\")")
+        stream.write("Button(frame:")
+        if let frame = definition.frame {
+            stream.write(RectGenerator().newInstance(rect: frame))
+        } else {
+            stream.write("NSRect()")
+        }
+        stream.write(")")
     }
     
     
     override func generateAfter(definition: UiButtonDefinition, output stream: GeneratorStream) throws {
+        
+        // Set title
+        stream.writeLine("\(definition.vName).title = \"\(definition.title)\"")
         
         if let actionDefinition = definition.action {
             try UiActionGenerator().generateVariable(caller: definition, action: actionDefinition, output: stream)

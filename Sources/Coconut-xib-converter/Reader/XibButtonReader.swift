@@ -42,6 +42,11 @@ class XibButtonReader : XibElementReader {
         // Log creation
         XibElementReader.logObject(logger: XibButtonReader.LOGGER, definition: buttonDefinition)
         
+        // Read size
+        if let rectElement = element.child(name: "rect") {
+            buttonDefinition.frame = XibRectReader().readRect(node: rectElement).rect
+        }
+        
         // Read connections in button element
         readActionConnections(element: element, definition: buttonDefinition)
         
