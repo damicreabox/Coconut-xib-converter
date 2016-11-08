@@ -10,6 +10,10 @@ import Foundation
 
 class UiButtonGeneratorDelegate : UIObjectGeneratorDelegate<UiButtonDefinition> {
     
+    init() {
+        super.init(useAfter: true)
+    }
+    
     override func generateInstanciation(definition: UiButtonDefinition, output stream: GeneratorStream) throws {
         stream.write("Button(title: \"\(definition.title)\")")
     }

@@ -10,6 +10,10 @@ import Foundation
 
 class UiWindowGeneratorDelegate : UIObjectGeneratorDelegate<UiWindowDefinition> {
     
+    init() {
+        super.init(useAfter: true)
+    }
+    
     override func generateBefore(definition: UiWindowDefinition, output stream: GeneratorStream) throws {
         stream.writeLine("let \(definition.vName)Frame = \(RectGenerator().newInstance(rect: definition.contentRect))")
     }

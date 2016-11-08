@@ -10,4 +10,7 @@ import Foundation
 
 class CustomObjectGeneratorDelegate : UIObjectGeneratorDelegate<CustomObjectDefinition> {
     
+    init() {
+        super.init(useAfter: false)
+    }
 }

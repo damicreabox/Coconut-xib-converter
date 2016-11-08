@@ -10,6 +10,10 @@ import Foundation
 
 class UiViewGeneratorDelegate : UIObjectGeneratorDelegate<UiViewDefinition> {
     
+    init() {
+        super.init(useAfter: true)
+    }
+    
     override func generateInstanciation(definition: UiViewDefinition, output stream: GeneratorStream) throws {
         stream.write("View()")
     }

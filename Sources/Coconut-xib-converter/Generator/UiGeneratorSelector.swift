@@ -16,6 +16,12 @@ protocol UiGenerator {
 
 class UIObjectGeneratorDelegate<O : UiDefinitionObject> {
     
+    let useAfter: Bool
+    
+    init(useAfter: Bool) {
+        self.useAfter = useAfter
+    }
+    
     func generateBefore(definition: O, output stream: GeneratorStream) throws {
         
     }
@@ -58,17 +64,21 @@ class UIObjectGenerator<O : UiDefinitionObject> : UiGenerator {
         try delegate.generateInstanciation(definition: objectDefinition, output: stream)
         stream.writeEmptyLine()
         
-        stream.writeLine("if let \(definition.vName) = \(definition.vName) {")
-        
-        // Add indent
-        stream.pushIndent()
-        
-        try delegate.generateAfter(definition: objectDefinition, output: stream)
-        
-        // remove indent
-        stream.popIndent()
-        
-        stream.writeLine("}")
+        // Test after
+        if (delegate.useAfter) {
+            
+            stream.writeLine("if let \(definition.vName) = \(definition.vName) {")
+            
+            // Add indent
+            stream.pushIndent()
+            
+            try delegate.generateAfter(definition: objectDefinition, output: stream)
+            
+            // remove indent
+            stream.popIndent()
+            
+            stream.writeLine("}")
+        }
     }
 
     func generateVariable(definition: UiDefinition, output stream: GeneratorStream) throws {
@@ -79,7 +89,11 @@ class UIObjectGenerator<O : UiDefinitionObject> : UiGenerator {
         stream.write("let \(definition.vName) = ")
         try delegate.generateInstanciation(definition: objectDefinition, output: stream)
         stream.writeEmptyLine()
-        try delegate.generateAfter(definition: objectDefinition, output: stream)
+        
+        // Test after
+        if (delegate.useAfter) {
+            try delegate.generateAfter(definition: objectDefinition, output: stream)
+        }
     }
 }
 
