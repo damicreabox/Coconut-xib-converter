@@ -17,6 +17,7 @@ class UiViewDefinition: UiDefinitionObject {
     
     var frame : NSRect? = nil
     var views = [UiViewDefinition]()
+    var constraints = [UiLayoutConstraint]()
     
     var viewType: UiViewType {
         get {

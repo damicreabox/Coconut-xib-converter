@@ -52,6 +52,12 @@ class XibViewReader : XibElementReader {
         // Log creation
         XibElementReader.logObject(logger: XibViewReader.LOGGER, definition: viewDefinition)
         
+        // Read constraints
+        if let constraintsNode = element.child(name: "constraints") {
+            viewDefinition.constraints = XibConstraintReader().read(elements: constraintsNode.children(name: "constraint"))
+            XibConstraintReader.log(logger: XibViewReader.LOGGER, constraints: viewDefinition.constraints)
+        }
+        
         // Set view
         viewDefinition.views = readSubViews(element: element)
         

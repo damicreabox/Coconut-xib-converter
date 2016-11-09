@@ -28,9 +28,18 @@ class XibElementReader {
         return readText(element: element, attr: "customClass", defaultValue: defaultValue)
     }
     
+    
     func readText(element: XmlDomElement?, attr: String, defaultValue: String = "") -> String {
+        if let str = readOptionalText(element: element, attr: attr) {
+            return str
+        } else {
+            return defaultValue
+        }
+    }
+    
+    func readOptionalText(element: XmlDomElement?, attr: String) -> String? {
         
-        var id = defaultValue
+        var id: String? = nil
         
         if let element = element {
             if let attrId = element[attr] {
@@ -40,4 +49,6 @@ class XibElementReader {
         
         return id;
     }
+    
+    
 }
